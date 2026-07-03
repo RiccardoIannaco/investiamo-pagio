@@ -86,8 +86,21 @@ Per il tema scuro senza toggle: copia temporanea del file forzando `data-theme="
 
 ## Diario di lavorazione pubblico
 
-L'avanzamento è pubblicato come Artifact su claude.ai (URL stabile, si aggiorna ricaricando):
-il link è condiviso nella conversazione con l'utente e va riproposto qui quando disponibile.
+L'avanzamento è pubblicato come Artifact su claude.ai (URL stabile, basta ricaricare la pagina):
+**https://claude.ai/code/artifact/cf28bf25-076c-4157-a8d5-e1d4e7571faa**
+Chi lavora al progetto deve aggiornarlo a ogni avanzamento significativo (redeploy sullo stesso URL,
+sorgente in scratchpad: `diario-investiamo-pagio.html`) e aggiungere una riga al registro aggiornamenti.
+
+## Convenzioni git (richieste dall'utente)
+
+- **Un branch per feature**, con nome parlante e prefisso per tipo: `feat/…`, `docs/…`, `fix/…`, `contenuti/…`
+  (es. `feat/catalogo-etf`, `feat/backtest-python`, `docs/guida-contributi`).
+- **Micro-commit**: ogni passo atomico è un commit con messaggio che dice cosa e perché
+  (convenzione `tipo: descrizione`). Mai commit-cumulo a fine giornata.
+- **Merge in `main` con `--no-ff`** così il branch resta visibile nella storia e si ritrova
+  in fretta dove e come una feature è stata fatta (`git log --oneline --graph`).
+- I branch delle feature completate non si cancellano (servono da indice storico).
+- `main` deve sempre buildare: è il branch pubblicato da GitHub Pages.
 
 ## Rationale delle scelte principali (sintesi)
 
