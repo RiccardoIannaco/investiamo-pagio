@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investiamo Pagio — mockup design</title>
+<style>
+  :root {
+    --bg: #FBF8F1;
+    --bg-raise: #F4EFE3;
+    --ink: #1E1C17;
+    --muted: #6E695D;
+    --accent: #1E5C3F;
+    --accent-soft: #E3EDE6;
+    --hairline: #E2DCCC;
+    --mono: "Cascadia Code", Consolas, "SF Mono", Menlo, monospace;
+    --serif: "Source Serif 4", Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    --sans: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  [data-theme="dark"] {
+    --bg: #171511;
+    --bg-raise: #201D17;
+    --ink: #E8E3D6;
+    --muted: #9B9587;
+    --accent: #7FBD98;
+    --accent-soft: #22322A;
+    --hairline: #322F27;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 17px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- header ---------- */
+  header {
+    border-bottom: 1px solid var(--hairline);
+    padding: 1.1rem 1.5rem;
+    display: flex; align-items: baseline; gap: 2rem; flex-wrap: wrap;
+    max-width: 60rem; margin: 0 auto;
+  }
+  .brand { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--ink); letter-spacing: -0.01em; }
+  nav { display: flex; gap: 1.15rem; flex-wrap: wrap; font-size: .82rem; letter-spacing: .04em; }
+  nav a { color: var(--muted); text-transform: uppercase; }
+  nav a.attiva { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+  .destra { margin-left: auto; display: flex; gap: 1rem; align-items: center; }
+  .cerca { color: var(--muted); font-size: .82rem; border: 1px solid var(--hairline); border-radius: 3px; padding: .15rem .6rem; }
+  #toggle {
+    background: none; border: 1px solid var(--hairline); border-radius: 3px;
+    color: var(--muted); cursor: pointer; font-size: .82rem; padding: .15rem .5rem;
+  }
+
+  /* ---------- layout ---------- */
+  main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+  .larga { max-width: 56rem; }
+
+  .etichetta-mockup {
+    font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+    border-top: 1px dashed var(--hairline); padding-top: 2.2rem; margin: 4rem 0 1.6rem;
+    font-family: var(--mono);
+  }
+  .etichetta-mockup:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+
+  .kicker { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; }
+  h1 { font-family: var(--serif); font-size: 2.3rem; line-height: 1.15; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 1rem; }
+  h2 { font-family: var(--serif); font-size: 1.45rem; font-weight: 700; margin: 2.4rem 0 .8rem; }
+  h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 .5rem; }
+  .sottotitolo { font-size: 1.08rem; color: var(--muted); max-width: 36rem; }
+
+  /* ---------- indice di rivista ---------- */
+  ol.indice { list-style: none; counter-reset: sez; margin-top: 2.2rem; border-top: 1px solid var(--hairline); }
+  ol.indice li { counter-increment: sez; border-bottom: 1px solid var(--hairline); padding: 1.05rem 0; display: flex; gap: 1.4rem; align-items: baseline; }
+  ol.indice li::before {
+    content: counter(sez, decimal-leading-zero);
+    font-family: var(--mono); font-size: .8rem; color: var(--muted); min-width: 1.6rem;
+  }
+  ol.indice .nome { font-family: var(--serif); font-weight: 700; font-size: 1.06rem; min-width: 9.5rem; }
+  ol.indice .descr { color: var(--muted); font-size: .92rem; }
+
+  /* ---------- ultime aggiunte ---------- */
+  ul.aggiunte { list-style: none; }
+  ul.aggiunte li { display: flex; gap: 1rem; align-items: baseline; padding: .45rem 0; }
+  .data { font-family: var(--mono); font-size: .78rem; color: var(--muted); min-width: 5.2rem; }
+  .tipo {
+    font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+    background: var(--accent-soft); color: var(--accent);
+    padding: .1rem .5rem; border-radius: 2px; min-width: 4.6rem; text-align: center;
+  }
+
+  /* ---------- scheda fonte ---------- */
+  .briciole { font-size: .8rem; color: var(--muted); margin-bottom: 1.2rem; }
+  .meta-fonte {
+    display: flex; gap: 1.3rem; flex-wrap: wrap; font-size: .85rem; color: var(--muted);
+    border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+    padding: .7rem 0; margin: 1.2rem 0 1.8rem;
+  }
+  .meta-fonte b { color: var(--ink); font-weight: 600; }
+  .concetti { margin: 1rem 0 0 1.2rem; }
+  .concetti li { margin-bottom: .55rem; }
+  .concetti li::marker { color: var(--accent); }
+
+  /* ---------- tabella ETF ---------- */
+  .scorri { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+  th { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: left; padding: .5rem .9rem .5rem 0; border-bottom: 1px solid var(--ink); }
+  td { padding: .6rem .9rem .6rem 0; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  .isin { font-family: var(--mono); font-size: .8rem; white-space: nowrap; }
+  .copia { cursor: pointer; border: none; background: none; color: var(--muted); font-size: .75rem; padding: 0 .2rem; }
+  .copia:hover { color: var(--accent); }
+  td.note { color: var(--muted); font-size: .84rem; max-width: 22rem; }
+
+  /* ---------- dashboard ---------- */
+  .grafico { border: 1px solid var(--hairline); border-radius: 4px; padding: 1.2rem; background: var(--bg-raise); margin: 1.4rem 0; }
+  .legenda { display: flex; gap: 1.4rem; flex-wrap: wrap; font-size: .8rem; color: var(--muted); margin-top: .8rem; }
+  .legenda span::before { content: "—"; font-weight: 700; margin-right: .35rem; }
+  .l1::before { color: var(--accent); } .l2::before { color: #B0813C; } .l3::before { color: #7A6FA8; } .l4::before { color: #A85454; }
+  .disclaimer { font-size: .78rem; color: var(--muted); font-style: italic; margin-top: .6rem; }
+  .num { font-family: var(--mono); font-size: .84rem; text-align: right; }
+  th.num-h { text-align: right; }
+  .aggiornato { font-family: var(--mono); font-size: .74rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="brand">Investiamo Pagio</span>
+  <nav>
+    <a href="#">Inizia qui</a>
+    <a href="#" class="attiva">Fonti</a>
+    <a href="#">ETF</a>
+    <a href="#">Portafogli</a>
+    <a href="#">Strumenti</a>
+    <a href="#">Articoli</a>
+    <a href="#">Lavagna</a>
+  </nav>
+  <span class="destra">
+    <span class="cerca">Cerca&hairsp;…&ensp;⌘K</span>
+    <button id="toggle" title="Tema chiaro/scuro">◐</button>
+  </span>
+</header>
+
+<main>
+  <p class="etichetta-mockup">Mockup · 1 di 4 — Home</p>
+
+  <p class="kicker">Second brain di finanza personale</p>
+  <h1>Le cose che avremmo voluto sapere prima.</h1>
+  <p class="sottotitolo">Fonti selezionate e riassunte, ETF scelti con criterio, portafogli modello con backtest fatti in casa. Curato dal gruppo, per il gruppo.</p>
+
+  <ol class="indice">
+    <li><span class="nome">Inizia qui</span><span class="descr">Il percorso consigliato se parti da zero</span></li>
+    <li><span class="nome">Fonti</span><span class="descr">Video, podcast, libri e paper — con i concetti da portarsi a casa</span></li>
+    <li><span class="nome">ETF</span><span class="descr">La lista curata, con ISIN, ticker e note pratiche</span></li>
+    <li><span class="nome">Portafogli</span><span class="descr">Lazy portfolio a confronto, coi nostri backtest</span></li>
+    <li><span class="nome">Strumenti</span><span class="descr">Fogli, calcolatori, siti di comparazione, script</span></li>
+    <li><span class="nome">Articoli</span><span class="descr">Quello che scriviamo noi</span></li>
+  </ol>
+
+  <h2>Ultime aggiunte</h2>
+  <ul class="aggiunte">
+    <li><span class="data">28 giu 2026</span><span class="tipo">podcast</span><a href="#">The Bull — puntata sui fondi pensione: i 5 punti chiave</a></li>
+    <li><span class="data">21 giu 2026</span><span class="tipo">articolo</span><a href="#">ETF obbligazionari vs obbligazioni singole: dove sta la differenza</a></li>
+    <li><span class="data">14 giu 2026</span><span class="tipo">paper</span><a href="#">Bessembinder (2018) — Do Stocks Outperform Treasury Bills?</a></li>
+  </ul>
+
+  <p class="etichetta-mockup">Mockup · 2 di 4 — Scheda fonte (con riassunto)</p>
+
+  <p class="briciole"><a href="#">Fonti</a> / Podcast</p>
+  <h1 style="font-size:1.8rem">The Bull — podcast settimanale</h1>
+  <div class="meta-fonte">
+    <span><b>Tipo</b> podcast</span>
+    <span><b>Autore</b> Riccardo Spada</span>
+    <span><a href="#">Spotify&thinsp;↗</a></span>
+    <span><a href="#">YouTube&thinsp;↗</a></span>
+    <span><b>Stato</b> riassunto</span>
+  </div>
+  <h3>Concetti da portarsi a casa</h3>
+  <ul class="concetti">
+    <li>Il mercato non si batte scegliendo i titoli: l'evidenza sui fondi attivi è schiacciante, meglio comprare tutto il mercato a basso costo.</li>
+    <li>Il fattore decisivo non è il rendimento ma il <em>comportamento</em>: chi vende nei crolli distrugge decenni di interesse composto.</li>
+    <li>Ordine delle priorità: fondo d'emergenza → tassazione/previdenza → poi, solo poi, investire.</li>
+  </ul>
+
+  <p class="etichetta-mockup">Mockup · 3 di 4 — Tabella ETF (estratto)</p>
+
+  <h2 style="margin-top:0">Azionario mondo</h2>
+  <div class="scorri">
+  <table>
+    <thead><tr><th>Nome</th><th>ISIN</th><th>Ticker</th><th>Note</th><th></th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Vanguard FTSE All-World UCITS ETF Acc</td>
+        <td class="isin">IE00BK5BQT80 <button class="copia" title="Copia ISIN">⧉</button></td>
+        <td class="isin">VWCE</td>
+        <td class="note">Comprende gli emergenti; domicilio irlandese → witholding tax USA ridotta</td>
+        <td><a href="#">JustETF&thinsp;↗</a></td>
+      </tr>
+      <tr>
+        <td>iShares Core MSCI World UCITS ETF Acc</td>
+        <td class="isin">IE00B4L5Y983 <button class="copia" title="Copia ISIN">⧉</button></td>
+        <td class="isin">SWDA</td>
+        <td class="note">Solo paesi sviluppati, niente emergenti</td>
+        <td><a href="#">JustETF&thinsp;↗</a></td>
+      </tr>
+      <tr>
+        <td>Xtrackers MSCI World ex USA UCITS ETF 1C</td>
+        <td class="isin">IE0006WW1TQ4 <button class="copia" title="Copia ISIN">⧉</button></td>
+        <td class="isin">EXUS</td>
+        <td class="note">USA esclusi — per chi vuole ridurre la concentrazione americana</td>
+        <td><a href="#">JustETF&thinsp;↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="etichetta-mockup">Mockup · 4 di 4 — Dashboard confronto portafogli</p>
+
+  <h2 style="margin-top:0">Crescita di 10.000&thinsp;€ — 1990&ndash;2025</h2>
+  <div class="grafico">
+    <svg viewBox="0 0 640 260" width="100%" role="img" aria-label="Equity line dei quattro portafogli">
+      <g stroke="var(--hairline)" stroke-width="1">
+        <line x1="40" y1="20" x2="40" y2="220"/><line x1="40" y1="220" x2="620" y2="220"/>
+        <line x1="40" y1="120" x2="620" y2="120" stroke-dasharray="3 5"/><line x1="40" y1="70" x2="620" y2="70" stroke-dasharray="3 5"/><line x1="40" y1="170" x2="620" y2="170" stroke-dasharray="3 5"/>
+      </g>
+      <g fill="var(--muted)" font-size="10" font-family="Consolas, monospace">
+        <text x="34" y="224" text-anchor="end">10k</text>
+        <text x="34" y="174" text-anchor="end">40k</text>
+        <text x="34" y="124" text-anchor="end">80k</text>
+        <text x="34" y="74"  text-anchor="end">160k</text>
+        <text x="40"  y="240">1990</text><text x="330" y="240" text-anchor="middle">2007</text><text x="620" y="240" text-anchor="end">2025</text>
+      </g>
+      <polyline fill="none" stroke="#A85454" stroke-width="1.8" points="40,218 90,210 140,196 190,170 240,178 290,150 330,168 380,190 430,140 480,110 530,80 580,60 620,38"/>
+      <polyline fill="none" stroke="var(--accent)" stroke-width="1.8" points="40,218 90,212 140,202 190,184 240,186 290,166 330,172 380,182 430,152 480,130 530,108 580,92 620,74"/>
+      <polyline fill="none" stroke="#B0813C" stroke-width="1.8" points="40,218 90,213 140,205 190,190 240,190 290,174 330,178 380,184 430,160 480,142 530,124 580,110 620,96"/>
+      <polyline fill="none" stroke="#7A6FA8" stroke-width="1.8" points="40,218 90,214 140,208 190,196 240,196 290,182 330,184 380,188 430,168 480,152 530,138 580,126 620,112"/>
+    </svg>
+    <div class="legenda">
+      <span class="l4">100% azionario globale</span>
+      <span class="l1">Golden Butterfly The Bull</span>
+      <span class="l2">LifeStrategy 60</span>
+      <span class="l3">All Weather EU</span>
+    </div>
+  </div>
+
+  <div class="scorri">
+  <table>
+    <thead><tr><th>Portafoglio</th><th class="num-h">CAGR</th><th class="num-h">Volatilità</th><th class="num-h">Max drawdown</th><th class="num-h">Peggior anno</th></tr></thead>
+    <tbody>
+      <tr><td>100% azionario globale</td><td class="num">8,1%</td><td class="num">15,2%</td><td class="num">−54%</td><td class="num">−41%</td></tr>
+      <tr><td>Golden Butterfly The Bull</td><td class="num">6,7%</td><td class="num">7,9%</td><td class="num">−19%</td><td class="num">−12%</td></tr>
+      <tr><td>LifeStrategy 60</td><td class="num">6,2%</td><td class="num">9,4%</td><td class="num">−32%</td><td class="num">−22%</td></tr>
+      <tr><td>All Weather EU</td><td class="num">5,8%</td><td class="num">7,1%</td><td class="num">−21%</td><td class="num">−14%</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="disclaimer">Backtest su indici sottostanti (gli ETF UCITS reali hanno storia troppo breve) — numeri illustrativi nel mockup. Non è una previsione né un consiglio d'investimento.</p>
+  <p class="aggiornato">dati aggiornati al 2026-06-30 · rigenerati con backtest/run_backtest.py</p>
+</main>
+
+<script>
+  const btn = document.getElementById('toggle');
+  const pref = window.matchMedia('(prefers-color-scheme: dark)');
+  const apply = d => document.documentElement.setAttribute('data-theme', d ? 'dark' : 'light');
+  apply(pref.matches);
+  btn.addEventListener('click', () => {
+    apply(document.documentElement.getAttribute('data-theme') !== 'dark');
+  });
+</script>
+</body>
+</html>
