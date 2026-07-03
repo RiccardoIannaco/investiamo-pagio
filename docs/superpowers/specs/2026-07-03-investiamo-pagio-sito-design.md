@@ -155,7 +155,7 @@ allocazioni:
 
 ## 7. Design visivo (approvato via mockup)
 
-Riferimento: `mockup-investiamo-pagio.html` (scratchpad, da conservare come riferimento in `docs/superpowers/specs/assets/` se utile).
+Riferimento: `docs/superpowers/specs/assets/mockup-investiamo-pagio.html` (mockup approvato dall'utente).
 
 - **Tipografia:** titoli in **Source Serif 4** (self-hosted via `@fontsource-variable/source-serif-4`); corpo in stack di sistema sans (`-apple-system, "Segoe UI", Roboto…`); ISIN/ticker/numeri in stack monospace di sistema.
 - **Colori (light):** fondo avorio `#FBF8F1`, testo `#1E1C17`, accento verde bottiglia `#1E5C3F`, righe sottili `#E2DCCC`. **(dark):** fondo `#171511`, testo `#E8E3D6`, accento `#7FBD98`, righe `#322F27`. Toggle manuale + rispetto di `prefers-color-scheme`.
@@ -179,7 +179,7 @@ Riferimento: `mockup-investiamo-pagio.html` (scratchpad, da conservare come rife
 
 ## 10. Testing e qualità
 
-- CI su ogni push/PR: `astro check` (se applicabile) + `astro build` — la validazione zod dei frontmatter avviene qui.
+- CI su ogni push/PR: `astro build` — la validazione zod dei frontmatter avviene qui e una build fallita non viene pubblicata.
 - `pytest` per `backtest/metriche.py` (stessa CI, job separato che gira solo se cambia `backtest/`).
 - Verifica manuale prima del lancio: navigazione completa, ricerca, dark mode, mobile.
 
