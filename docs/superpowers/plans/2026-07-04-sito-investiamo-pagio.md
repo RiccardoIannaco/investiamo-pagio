@@ -1,4 +1,4 @@
-# Sito Investiamo Pagio — Implementation Plan
+﻿# Sito Investiamo Pagio — Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -1223,7 +1223,7 @@ def scarica(ticker: str, offline: bool) -> pd.Series:
     if not offline:
         import yfinance as yf
 
-        dati = yf.download(ticker, interval="1mo", auto_adjust=True, progress=False)
+        dati = yf.download(ticker, period="max", interval="1mo", auto_adjust=True, progress=False)
         if dati is None or dati.empty:
             sys.exit(f"ERRORE: nessun dato scaricato per {ticker} (riprova o usa --offline)")
         GREZZI.mkdir(exist_ok=True)
