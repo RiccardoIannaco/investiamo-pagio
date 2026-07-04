@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import { caricaPortafogli, caricaBacktest } from '../../lib/dati';
+import { pct } from '../../lib/formato';
+import { href } from '../../lib/percorsi';
+
+export function getStaticPaths() {
+  return caricaPortafogli().map((p) => ({ params: { slug: p.slug }, props: { portafoglio: p } }));
+}
+const { portafoglio } = Astro.props;
+const bt = caricaBacktest(portafoglio.slug);
+---
+<Base titolo={portafoglio.nome}>
+  <p class="kicker"><a href={href('/portafogli')}>Portafogli</a></p>
+  <h1>{portafoglio.nome}</h1>
+  <p>{portafoglio.descrizione}</p>
+
+  {bt && (
+    <ul class="meta-riga">
+      <li><b>CAGR</b> {pct(bt.metriche.cagr)}</li>
+      <li><b>Volatilità</b> {pct(bt.metriche.volatilita)}</li>
+      <li><b>Max drawdown</b> {pct(bt.metriche.max_drawdown)}</li>
+      <li><b>Finestra</b> {bt.finestra[0]} → {bt.finestra[1]}</li>
+    </ul>
+  )}
+
+  <h2>Composizione</h2>
+  <div class="scorri">
+    <table>
+      <thead>
+        <tr><th class="num-h">Peso</th><th>Asset</th><th>ETF reale</th><th>ISIN</th><th>Proxy backtest</th><th>Commento</th></tr>
+      </thead>
+      <tbody>
+        {portafoglio.allocazioni.map((a) => (
+          <tr>
+            <td class="num">{pct(a.peso)}</td>
+            <td>{a.asset}</td>
+            <td>{a.etf_reale.nome}</td>
+            <td class="mono">{a.etf_reale.isin}</td>
+            <td class="mono">{a.proxy}</td>
+            <td class="muted">{a.commento ?? ''}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">
+    Ribilanciamento: {portafoglio.ribilanciamento}. Il ribilanciamento è la parte difficile:
+    va fatto davvero, anche quando fa male.
+  </p>
+</Base>
+
+<style>
+  .num-h { text-align: right; }
+  .mono { font-family: var(--mono); font-size: .8rem; white-space: nowrap; }
+</style>
