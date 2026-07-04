@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/percorsi';
+const bundle = href('/pagefind/');
+---
+<Base titolo="Cerca">
+  <p class="kicker">Ricerca</p>
+  <h1>Cerca nel sito</h1>
+  <p class="muted piccola">
+    La ricerca indicizza tutto: fonti, articoli, ETF, lavagna.
+    Funziona sul sito pubblicato (in sviluppo locale: <code>npm run build</code> e <code>npm run preview</code>).
+  </p>
+  <div id="ricerca"></div>
+</Base>
+
+<link rel="stylesheet" href={href('/pagefind/pagefind-ui.css')} />
+<script is:inline src={href('/pagefind/pagefind-ui.js')}></script>
+<script is:inline define:vars={{ bundle }}>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.PagefindUI) {
+      new window.PagefindUI({
+        element: '#ricerca',
+        bundlePath: bundle,
+        showSubResults: true,
+        translations: {
+          placeholder: 'Cerca…',
+          zero_results: 'Nessun risultato per «[SEARCH_TERM]»',
+        },
+      });
+    } else {
+      const nodo = document.getElementById('ricerca');
+      if (nodo) nodo.innerHTML = '<p class="muted">Indice di ricerca non trovato: in locale serve <code>npm run build</code>.</p>';
+    }
+  });
+</script>
+
+<style is:global>
+  #ricerca { --pagefind-ui-primary: var(--accent); --pagefind-ui-text: var(--ink); --pagefind-ui-background: var(--bg); --pagefind-ui-border: var(--hairline); --pagefind-ui-font: inherit; }
+</style>
