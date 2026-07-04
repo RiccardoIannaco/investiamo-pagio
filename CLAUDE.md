@@ -26,27 +26,28 @@ https://claude.ai/code/artifact/cf28bf25-076c-4157-a8d5-e1d4e7571faa
 4. `.superpowers/sdd/progress.md` — il ledger di avanzamento: i task lì marcati completi
    sono FATTI, non ri-eseguirli (fidati del ledger e di `git log`, non della memoria).
 
-## Stato (aggiornato 2026-07-04, pre-implementazione)
+## Stato (aggiornato 2026-07-05, TUTTI i 12 task implementati)
 
 **Fatto:**
-- Analisi export Notion (zip in radice, testo estratto in `docs/superpowers/plans/assets/notion-testo-estratto.txt`)
-- Decisioni con l'utente, mockup approvato (`docs/superpowers/specs/assets/mockup-investiamo-pagio.html` — vincolante)
-- Spec + piano completi e committati; asset di migrazione pronti in `docs/superpowers/plans/assets/`
-- Catalogo ETF ampliato con label e TER: 10 categorie verificate sul web (justETF, lug 2026)
+- Analisi Notion, decisioni, mockup approvato, spec + piano committati.
+- **Sito completo**: 16 pagine buildano (`npm run build`), pytest 6/6, tutte le sezioni
+  attive (home, inizia-qui, fonti con 29 schede, ETF con label/TER, dashboard con backtest
+  reali 2008-2026, strumenti, articoli, lavagna, cerca, come-contribuire, 404).
+  Ledger dettagliato in `.superpowers/sdd/progress.md`.
+- Task 1 eseguito da subagente con review pulita; Task 2-12 eseguiti inline (limiti
+  subagenti) con build + verifica visiva screenshot per ogni task.
+- Catalogo ETF: 14/22 categorie verificate sul web (justETF, lug 2026).
 
 **In corso / da fare:**
-- Workflow multi-agente `etf-catalogo-ricerca` (run ID `wf_19264f2b-257`): mancano 12
-  categorie (america, america-latina, fattoriali, lifestrategy, obbligazionari-a-scadenza,
-  oro, commodities, crypto, leva, managed-futures, quantistici, compensazione-minusvalenze)
-  e la passata di verifica avversariale — bloccato dal limite subagenti della sessione,
-  riprendere con `resumeFromRunId` dopo il reset; poi fondere i risultati in
-  `docs/superpowers/plans/assets/etf.yaml` (stesso formato delle categorie già verificate).
-- Esecuzione dei 12 task del piano in modalità **subagent-driven** (scelta dall'utente):
-  skill `superpowers:subagent-driven-development`, un branch per task, ledger aggiornato.
-- Dopo il Task 12: l'utente crea il repo GitHub, push, attiva Pages (istruzioni nel README
-  previsto dal piano).
-- Contenuti attesi dall'utente (promemoria in `IDEE.md`): lista video per trascrizioni e
-  riassunti; Excel e simulazioni dal Drive → `drive-locale/` (gitignored).
+- Workflow `etf-catalogo-ricerca` (run `wf_19264f2b-257`): ultime 8 categorie (america,
+  fattoriali, lifestrategy, obbligazionari-a-scadenza, crypto, managed-futures,
+  quantistici, compensazione-minusvalenze) → fondere i risultati in `dati/etf.yaml`
+  E in `docs/superpowers/plans/assets/etf.yaml` (stesso formato delle categorie fatte).
+- Review finale whole-branch con subagenti (i task 2-12 non hanno avuto review individuale:
+  recuperare con una review complessiva; finding minor noti nel ledger).
+- L'utente: crea il repo GitHub `investiamo-pagio`, push, attiva Pages (README §Pubblicazione).
+- Contenuti attesi dall'utente (promemoria in `IDEE.md`): lista video per i riassunti;
+  Excel e simulazioni dal Drive → `drive-locale/` (gitignored); screenshot per la guida.
 
 ## Struttura della codebase
 
