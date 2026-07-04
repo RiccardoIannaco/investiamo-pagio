@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { Content as Idee } from '../../IDEE.md';
+
+const note = await getCollection('lavagna');
+const rese = await Promise.all(
+  note.map(async (n) => ({ titolo: n.data.titolo, Contenuto: (await render(n)).Content })),
+);
+---
+<Base titolo="Lavagna" descrizione="Idee, cose da fare e domande aperte del gruppo.">
+  <p class="kicker">Lavoro in corso</p>
+  <h1>Lavagna</h1>
+  <p class="muted">
+    Il retrobottega del sito: idee, domande senza risposta, cose da scrivere.
+    Si modifica dai file in <code>contenuti/lavagna/</code> e da <code>IDEE.md</code>.
+  </p>
+  {rese.map(({ titolo, Contenuto }) => (
+    <section class="hairline-top">
+      <h2>{titolo}</h2>
+      <Contenuto />
+    </section>
+  ))}
+  <section class="hairline-top">
+    <h2>Idee</h2>
+    <Idee />
+  </section>
+</Base>

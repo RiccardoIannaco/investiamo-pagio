@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../lib/percorsi';
+---
+<Base titolo="Pagina non trovata">
+  <p class="kicker">Errore 404</p>
+  <h1>Questa pagina non esiste.</h1>
+  <p class="muted">Forse è stata spostata, o forse è un'idea non ancora scritta: in quel caso è sulla <a href={href('/lavagna')}>lavagna</a>.</p>
+  <p><a href={href('/')}>← Torna alla home</a></p>
+</Base>
