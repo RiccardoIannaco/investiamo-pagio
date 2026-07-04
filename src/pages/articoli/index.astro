@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { href } from '../../lib/percorsi';
+
+const articoli = (await getCollection('articoli', (a) => !a.data.bozza)).sort(
+  (a, b) => b.data.data.getTime() - a.data.data.getTime(),
+);
+---
+<Base titolo="Articoli" descrizione="Gli articoli scritti dal gruppo.">
+  <p class="kicker">Di nostro pugno</p>
+  <h1>Articoli</h1>
+  <p class="muted">
+    Quello che il gruppo scrive quando una domanda merita più di un link.
+    Per aggiungerne uno: <a href={href('/come-contribuire')}>come contribuire</a>.
+  </p>
+  <ul class="elenco">
+    {articoli.map((a) => (
+      <li>
+        <span class="data">{a.data.data.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
+        <span>
+          <a href={href(`/articoli/${a.id}`)}>{a.data.titolo}</a>
+          <span class="muted"> — {a.data.autore}</span>
+        </span>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .elenco { list-style: none; padding-left: 0 !important; }
+  .elenco li { display: flex; gap: 1rem; align-items: baseline; padding: .55rem 0; border-bottom: 1px solid var(--hairline); }
+  .data { font-family: var(--mono); font-size: .76rem; color: var(--muted); min-width: 6.4rem; }
+</style>
