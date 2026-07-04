@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import GraficoLinee from '../../components/GraficoLinee.astro';
+import { caricaPortafogli, caricaBacktest, type DatiBacktest } from '../../lib/dati';
+import { pct, dataIt } from '../../lib/formato';
+import { href } from '../../lib/percorsi';
+
+const COLORI = ['#A85454', 'var(--accent)', '#B0813C', '#7A6FA8'];
+const portafogli = caricaPortafogli();
+const conDati = portafogli
+  .map((p) => ({ p, bt: caricaBacktest(p.slug) }))
+  .filter((x): x is { p: (typeof portafogli)[number]; bt: DatiBacktest } => x.bt !== null)
+  .sort((a, b) => b.bt.metriche.cagr - a.bt.metriche.cagr);
+
+const serie = conDati.map((x, i) => ({ nome: x.p.nome, colore: COLORI[i % COLORI.length], punti: x.bt.serie }));
+const aggiornato = conDati[0]?.bt.aggiornato;
+const finestra = conDati[0]?.bt.finestra;
+---
+<Base titolo="Portafogli" descrizione="I lazy portfolio del gruppo a confronto, con backtest fatti in casa.">
+  <div class="colonna-larga">
+    <p class="kicker">Dashboard</p>
+    <h1>Portafogli a confronto</h1>
+    <p class="muted">
+      Crescita di 10.000&thinsp;€ — {finestra?.[0]} → {finestra?.[1]}, scala logaritmica,
+      ribilanciamento annuale. Backtest nostri: <a href="#metodo">metodo e limiti</a> sotto.
+    </p>
+
+    <div class="pannello">
+      <GraficoLinee serie={serie} />
+      <div class="legenda">
+        {serie.map((s) => (
+          <span style={`--c: ${s.colore}`}>{s.nome}</span>
+        ))}
+      </div>
+    </div>
+
+    <div class="scorri">
+      <table>
+        <thead>
+          <tr><th>Portafoglio</th><th class="num-h">CAGR</th><th class="num-h">Volatilità</th><th class="num-h">Max drawdown</th><th class="num-h">Peggior anno</th></tr>
+        </thead>
+        <tbody>
+          {conDati.map(({ p, bt }) => (
+            <tr>
+              <td><a href={href(`/portafogli/${p.slug}`)}>{p.nome}</a></td>
+              <td class="num">{pct(bt.metriche.cagr)}</td>
+              <td class="num">{pct(bt.metriche.volatilita)}</td>
+              <td class="num">{pct(bt.metriche.max_drawdown)}</td>
+              <td class="num">{pct(bt.metriche.peggior_anno)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="metodo">Metodo e limiti</h2>
+    <p class="muted">
+      I backtest usano ETF USA come proxy (gli ETF UCITS reali hanno storia troppo breve),
+      convertiti in euro, senza costi né tasse: servono a confrontare i portafogli tra loro,
+      non a prevedere il futuro. Dettagli in <code>backtest/README.md</code>.
+      <em>Niente qui è un consiglio d'investimento.</em>
+    </p>
+    <p class="mono-piccolo">dati aggiornati al {aggiornato && dataIt(aggiornato)} · rigenerati con backtest/run_backtest.py</p>
+  </div>
+</Base>
+
+<style>
+  .pannello { border: 1px solid var(--hairline); border-radius: 4px; padding: 1.2rem; background: var(--bg-raise); margin: 1.4rem 0; }
+  .legenda { display: flex; gap: 1.4rem; flex-wrap: wrap; font-size: .8rem; color: var(--muted); margin-top: .8rem; }
+  .legenda span::before { content: '—'; font-weight: 700; margin-right: .35rem; color: var(--c); }
+  .num-h { text-align: right; }
+  .mono-piccolo { font-family: var(--mono); font-size: .74rem; color: var(--muted); }
+</style>
