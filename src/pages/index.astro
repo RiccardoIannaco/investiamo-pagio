@@ -1,8 +1,73 @@
 ---
 import Base from '../layouts/Base.astro';
+import BadgeTipo from '../components/BadgeTipo.astro';
+import { getCollection } from 'astro:content';
+import { href } from '../lib/percorsi';
+
+const fonti = await getCollection('fonti');
+const articoli = await getCollection('articoli', (a) => !a.data.bozza);
+
+type Voce = { data: Date; tipo: string; titolo: string; url: string };
+const ultime: Voce[] = [
+  ...fonti
+    .filter((f) => f.data.aggiunta)
+    .map((f) => ({
+      data: f.data.aggiunta!,
+      tipo: f.data.tipo,
+      titolo: f.data.titolo,
+      url: f.data.stato === 'solo-link' ? f.data.link : href(`/fonti/${f.id}`),
+    })),
+  ...articoli.map((a) => ({
+    data: a.data.data,
+    tipo: 'articolo',
+    titolo: a.data.titolo,
+    url: href(`/articoli/${a.id}`),
+  })),
+]
+  .sort((a, b) => b.data.getTime() - a.data.getTime())
+  .slice(0, 6);
+
+const sezioni = [
+  ['Inizia qui', '/inizia-qui', 'Il percorso consigliato se parti da zero'],
+  ['Fonti', '/fonti', 'Video, podcast, libri e paper — con i concetti da portarsi a casa'],
+  ['ETF', '/etf', 'La lista curata, con ISIN, TER e note pratiche'],
+  ['Portafogli', '/portafogli', 'Lazy portfolio a confronto, coi nostri backtest'],
+  ['Strumenti', '/strumenti', 'Fogli, calcolatori, siti di comparazione, script'],
+  ['Articoli', '/articoli', 'Quello che scriviamo noi'],
+] as const;
 ---
 <Base titolo="Home">
   <p class="kicker">Second brain di finanza personale</p>
   <h1>Le cose che avremmo voluto sapere prima.</h1>
-  <p class="muted">Sito in costruzione: la home vera arriva col Task 8.</p>
+  <p class="muted sottotitolo">
+    Fonti selezionate e riassunte, ETF scelti con criterio, portafogli modello con
+    backtest fatti in casa. Curato dal gruppo, per il gruppo.
+  </p>
+
+  <ol class="indice">
+    {sezioni.map(([nome, percorso, descr]) => (
+      <li>
+        <a class="nome" href={href(percorso)}>{nome}</a>
+        <span class="descr">{descr}</span>
+      </li>
+    ))}
+  </ol>
+
+  <h2>Ultime aggiunte</h2>
+  <ul class="aggiunte">
+    {ultime.map((v) => (
+      <li>
+        <span class="data">{v.data.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
+        <BadgeTipo tipo={v.tipo} />
+        <a href={v.url}>{v.titolo}</a>
+      </li>
+    ))}
+  </ul>
 </Base>
+
+<style>
+  .sottotitolo { font-size: 1.05rem; max-width: 36rem; }
+  .aggiunte { list-style: none; padding-left: 0 !important; }
+  .aggiunte li { display: flex; gap: 1rem; align-items: baseline; padding: .45rem 0; }
+  .data { font-family: var(--mono); font-size: .76rem; color: var(--muted); min-width: 6.4rem; }
+</style>

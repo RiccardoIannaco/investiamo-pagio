@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { caricaStrumenti } from '../lib/dati';
+
+const gruppi = caricaStrumenti();
+---
+<Base titolo="Strumenti" descrizione="Fogli, calcolatori, siti di comparazione e script del gruppo.">
+  <p class="kicker">Cassetta degli attrezzi</p>
+  <h1>Strumenti</h1>
+  <p class="muted">Link commentati: fogli di calcolo, calcolatori, siti di analisi. I link Drive richiedono l'accesso del gruppo.</p>
+  {gruppi.map((g) => (
+    <section>
+      <h2>{g.nome}</h2>
+      {g.nota && <p class="muted">{g.nota}</p>}
+      <ul class="strumenti">
+        {g.strumenti.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener">{s.nome}&thinsp;↗</a>
+            <span class="muted"> — {s.descrizione}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .strumenti { list-style: none; padding-left: 0 !important; }
+  .strumenti li { padding: .5rem 0; border-bottom: 1px solid var(--hairline); }
+</style>

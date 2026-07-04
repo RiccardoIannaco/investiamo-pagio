@@ -76,3 +76,17 @@ export function caricaBacktest(slug: string): DatiBacktest | null {
   if (!existsSync(percorso)) return null;
   return BacktestSchema.parse(JSON.parse(readFileSync(percorso, 'utf8')));
 }
+
+const Strumento = z.object({ nome: z.string(), url: z.string().url(), descrizione: z.string() });
+const GruppoStrumentiSchema = z.object({
+  id: z.string(),
+  nome: z.string(),
+  nota: z.string().optional(),
+  strumenti: z.array(Strumento),
+});
+export type GruppoStrumenti = z.infer<typeof GruppoStrumentiSchema>;
+
+export function caricaStrumenti(): GruppoStrumenti[] {
+  const grezzo = yaml.load(readFileSync('dati/strumenti.yaml', 'utf8')) as { gruppi: unknown };
+  return z.array(GruppoStrumentiSchema).parse(grezzo.gruppi);
+}
