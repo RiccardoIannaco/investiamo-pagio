@@ -98,14 +98,23 @@ bozza: false             # true = non pubblicato
 
 ### Catalogo ETF (`dati/etf.yaml`)
 
+Ampliato su richiesta dell'utente (2026-07-04): più ETF per categoria, TER indicativi
+(con data di aggiornamento e nota "verifica su JustETF") e **label** per cercare per
+caratteristica (value, growth, world, small-cap, attivo, oro, crypto, commodities,
+managed-futures, leva, obbligazioni…). La pagina ETF filtra per label e per testo.
+
 ```yaml
+aggiornato: "2026-07-04"
 categorie:
-  - nome: "Azionario mondo"
+  - id: azionario-mondo
+    nome: "Azionario mondo"
     nota: "FTSE All World e MSCI ACWI comprendono gli emergenti, MSCI World no…"
     etf:
       - nome: "Vanguard FTSE All-World UCITS ETF Acc"
         isin: IE00BK5BQT80
         ticker: VWCE
+        ter: 0.22           # percento annuo, indicativo
+        label: [azionario, world]
         note: "Comprende gli emergenti; domicilio irlandese"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BK5BQT80"
 ```
@@ -131,7 +140,8 @@ allocazioni:
   "portafoglio": "golden-butterfly-the-bull",
   "aggiornato": "2026-06-30",
   "valuta": "EUR",
-  "serie": [["1990-01", 10000], ["1990-02", 10034]],
+  "finestra": ["2008-07", "2026-06"],
+  "serie": [["2008-07", 10000], ["2008-08", 10034]],
   "metriche": { "cagr": 0.067, "volatilita": 0.079, "max_drawdown": -0.19, "peggior_anno": -0.12 }
 }
 ```
