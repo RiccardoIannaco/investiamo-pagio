@@ -233,12 +233,22 @@ categorie:
 
   - id: america-latina
     nome: "America Latina"
+    nota: "Offerta UCITS molto limitata: l'indice MSCI EM Latin America è concentrato (Brasile ~60%, Messico ~25-30%), con forte esposizione a materie prime e banche. Verificato su justETF (luglio 2026)."
     etf:
       - nome: "Amundi MSCI Emerging Markets Latin America UCITS ETF EUR C"
         isin: LU1681045024
+        ticker: ALAT
+        ter: 0.20
         label: [azionario, emergenti, geografico, swap]
         note: "Replica sintetica (SWAP)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1681045024"
+      - nome: "iShares MSCI EM Latin America UCITS ETF USD (Dist)"
+        isin: IE00B27YCK28
+        ticker: LTAM
+        ter: 0.20
+        label: [azionario, emergenti, geografico, dividendi]
+        note: "Alternativa fisica e a distribuzione, storico dal 2007 (Xetra: IUSC)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B27YCK28"
 
   - id: emergenti
     nome: "Emergenti"
@@ -615,16 +625,21 @@ categorie:
 
   - id: oro
     nome: "ETC oro"
-    nota: "Categoria in ampliamento: verifica web in corso."
+    nota: "Tutti ETC su oro fisico (note di debito garantite da lingotti allocati, non UCITS). Fiscalità italiana: i proventi degli ETC sono redditi diversi al 26%, compensabili con le minusvalenze (a differenza degli ETF). Verificati su justETF (luglio 2026)."
     etf:
-      - nome: "Invesco Physical Gold A"
+      - nome: "Invesco Physical Gold ETC"
         isin: IE00B579F325
         ticker: SGLD
+        ter: 0.12
         label: [oro, etn-etc]
+        note: "~22,5 mld, replica fisica (Xetra: 8PSG)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B579F325"
       - nome: "iShares Physical Gold ETC"
         isin: IE00B4ND3602
+        ticker: SGLN
+        ter: 0.12
         label: [oro, etn-etc]
+        note: "Il più grande ETC oro in Europa (~30 mld) (Xetra: PPFB)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B4ND3602"
       - nome: "WisdomTree Physical Swiss Gold"
         isin: JE00B588CD74
@@ -633,15 +648,100 @@ categorie:
         label: [oro, etn-etc]
         note: "Oro custodito in Svizzera (Xetra: GZUR)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=JE00B588CD74"
+      - nome: "Amundi Physical Gold ETC (C)"
+        isin: FR0013416716
+        ticker: GOLD
+        ter: 0.12
+        label: [oro, etn-etc]
+        note: "Lingotti allocati, ~9,5 mld (Xetra: GLDA)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=FR0013416716"
+      - nome: "Xetra-Gold"
+        isin: DE000A0S9GB0
+        ticker: 4GLD
+        ter: 0.00
+        label: [oro, etn-etc]
+        note: "Unico con diritto di consegna fisica dei lingotti; TER 0% ma custodia bancaria ~0,30-0,36%/anno; solo su Xetra, non su Borsa Italiana"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=DE000A0S9GB0"
+      - nome: "WisdomTree Core Physical Gold"
+        isin: JE00BN2CJ301
+        ticker: WGLD
+        ter: 0.12
+        label: [oro, etn-etc]
+        note: "Versione low-cost del classico PHAU"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=JE00BN2CJ301"
 
   - id: commodities
     nome: "Commodities"
-    nota: "Categoria in ampliamento: verifica web in corso."
+    nota: "Tutti gli ETF su materie prime diversificate UCITS usano replica sintetica (swap) su indici di future. L'indice standard è il Bloomberg Commodity; le varianti 'longer dated'/CMCI ottimizzano il rolling dei future (meno contango) a costo di un TER più alto. Verificati su justETF (luglio 2026)."
     etf:
       - nome: "iShares Diversified Commodity Swap UCITS ETF"
         isin: IE00BDFL4P12
+        ticker: SXRS
+        ter: 0.19
         label: [commodities, swap]
+        note: "Non quotato su Borsa Italiana, solo Xetra/gettex"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BDFL4P12"
+      - nome: "Invesco Bloomberg Commodity UCITS ETF Acc"
+        isin: IE00BD6FTQ80
+        ticker: CMOD
+        ter: 0.19
+        label: [commodities, swap]
+        note: "Il più popolare sul Bloomberg Commodity; quotato su Borsa Italiana"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BD6FTQ80"
+      - nome: "L&G All Commodities UCITS ETF"
+        isin: IE00BF0BCP69
+        ticker: ETLF
+        ter: 0.15
+        label: [commodities, swap]
+        note: "Il più economico (0,15%); non su Borsa Italiana (Xetra/gettex)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BF0BCP69"
+      - nome: "UBS CMCI Composite SF UCITS ETF USD acc"
+        isin: IE00B53H0131
+        ticker: CCUSAS
+        ter: 0.34
+        label: [commodities, swap]
+        note: "Rolling ottimizzato su più scadenze per ridurre il contango (Xetra: UIQK)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B53H0131"
+      - nome: "L&G Longer Dated All Commodities UCITS ETF"
+        isin: IE00B4WPHX27
+        ticker: COMF
+        ter: 0.30
+        label: [commodities, swap]
+        note: "Future a scadenza più lunga per mitigare il contango"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B4WPHX27"
+
+  - id: leva
+    nome: "ETF a leva"
+    nota: "ATTENZIONE: leva con reset giornaliero — il moltiplicatore (2x, 3x) vale solo sul rendimento di UN giorno. Su periodi lunghi il compounding causa 'volatility decay': in mercati laterali la performance può essere molto peggiore di 2x/3x l'indice, anche negativa con indice piatto. Strumenti da trading tattico, non da buy-and-hold né da PAC. I 3x esistono solo come ETN/ETP (i limiti UCITS vietano leva 3x): rischio emittente in più. Verificati su justETF (luglio 2026)."
+    etf:
+      - nome: "Xtrackers S&P 500 2x Leveraged Daily Swap UCITS ETF 1C"
+        isin: LU0411078552
+        ticker: XS2L
+        ter: 0.60
+        label: [azionario, usa, leva, swap]
+        note: "Leva 2x daily sull'S&P 500, ~525 mln (Xetra: DBPG)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU0411078552"
+      - nome: "Amundi MSCI USA Daily (2x) Leveraged UCITS ETF Acc"
+        isin: FR0010755611
+        ticker: CL2
+        ter: 0.50
+        label: [azionario, usa, leva, swap]
+        note: "Ex Lyxor, 2x daily su MSCI USA, >1 mld (Xetra: 18MF)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=FR0010755611"
+      - nome: "Amundi Nasdaq-100 Daily (2x) Leveraged UCITS ETF Acc"
+        isin: FR0010342592
+        ticker: LQQ
+        ter: 0.60
+        label: [azionario, usa, leva, swap]
+        note: "Il più grande 2x sul Nasdaq in UE, ~1,3 mld (Xetra: L8I7)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=FR0010342592"
+      - nome: "WisdomTree NASDAQ 100 3x Daily Leveraged"
+        isin: IE00BLRPRL42
+        ticker: QQQ3
+        ter: 0.75
+        label: [azionario, usa, leva, etn-etc]
+        note: "ETN collateralizzato (non UCITS), 3x daily: estremamente volatile (Xetra: 3QQQ)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BLRPRL42"
 
   - id: quantistici
     nome: "ETF quantistici termogravitonici cibernetici"
