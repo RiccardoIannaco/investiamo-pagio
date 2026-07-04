@@ -1,0 +1,78 @@
+---
+import '@fontsource-variable/source-serif-4';
+import '../styles/tokens.css';
+import { href } from '../lib/percorsi';
+
+interface Props { titolo: string; descrizione?: string }
+const { titolo, descrizione = 'Second brain di finanza personale del gruppo.' } = Astro.props;
+
+const voci = [
+  ['Inizia qui', '/inizia-qui'],
+  ['Fonti', '/fonti'],
+  ['ETF', '/etf'],
+  ['Portafogli', '/portafogli'],
+  ['Strumenti', '/strumenti'],
+  ['Articoli', '/articoli'],
+  ['Lavagna', '/lavagna'],
+  ['Cerca', '/cerca'],
+] as const;
+const percorsoAttuale = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={descrizione} />
+    <title>{titolo} · Investiamo Pagio</title>
+    <script is:inline>
+      const salvato = localStorage.getItem('tema');
+      document.documentElement.dataset.theme =
+        salvato ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href={href('/')}>Investiamo Pagio</a>
+      <nav aria-label="principale">
+        {voci.map(([nome, percorso]) => (
+          <a href={href(percorso)} class:list={{ attiva: percorsoAttuale.startsWith(href(percorso)) }}>{nome}</a>
+        ))}
+      </nav>
+      <button id="cambia-tema" title="Tema chiaro/scuro" aria-label="Cambia tema">◐</button>
+    </header>
+    <main class="colonna" data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="colonna muted">
+      <p class="hairline-top">
+        Second brain del gruppo, curato a mano. Niente qui è un consiglio d'investimento.
+        · <a href={href('/come-contribuire')}>Come contribuire</a>
+      </p>
+    </footer>
+    <script>
+      document.getElementById('cambia-tema')?.addEventListener('click', () => {
+        const nuovo = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = nuovo;
+        localStorage.setItem('tema', nuovo);
+      });
+    </script>
+    <style>
+      header {
+        border-bottom: 1px solid var(--hairline);
+        padding: 1.1rem 1.4rem;
+        display: flex; align-items: baseline; gap: 1.6rem; flex-wrap: wrap;
+        max-width: 60rem; margin: 0 auto;
+      }
+      .brand { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; color: var(--ink); }
+      nav { display: flex; gap: 1.1rem; flex-wrap: wrap; font-size: .8rem; letter-spacing: .05em; }
+      nav a { color: var(--muted); text-transform: uppercase; }
+      nav a.attiva { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+      #cambia-tema {
+        margin-left: auto; background: none; border: 1px solid var(--hairline); border-radius: 3px;
+        color: var(--muted); cursor: pointer; font-size: .85rem; padding: .1rem .5rem;
+      }
+      footer p { font-size: .8rem; }
+    </style>
+  </body>
+</html>
