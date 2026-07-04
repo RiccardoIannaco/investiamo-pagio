@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { href } from '../../lib/percorsi';
+
+export async function getStaticPaths() {
+  const articoli = await getCollection('articoli', (a) => !a.data.bozza);
+  return articoli.map((a) => ({ params: { slug: a.id }, props: { articolo: a } }));
+}
+const { articolo } = Astro.props;
+const { Content } = await render(articolo);
+---
+<Base titolo={articolo.data.titolo}>
+  <p class="kicker"><a href={href('/articoli')}>Articoli</a></p>
+  <h1>{articolo.data.titolo}</h1>
+  <ul class="meta-riga">
+    <li><b>Autore</b> {articolo.data.autore}</li>
+    <li><b>Data</b> {articolo.data.data.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })}</li>
+    {articolo.data.tag.length > 0 && <li>{articolo.data.tag.map((t) => <span class="badge">{t}</span>)}</li>}
+  </ul>
+  <Content />
+</Base>
