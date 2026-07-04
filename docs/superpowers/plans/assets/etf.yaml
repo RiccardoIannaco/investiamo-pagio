@@ -1,0 +1,274 @@
+# Catalogo ETF selezionati — migrato dalla pagina Notion "ETF Selezionati"
+# I ticker sono indicati solo dove presenti nel Notion originale.
+categorie:
+  - id: azionario-mondo
+    nome: "Azionario mondo"
+    nota: "FTSE All World e MSCI ACWI comprendono gli emergenti mentre MSCI World no; occhio a usare fondi irlandesi per la witholding tax statunitense (ISIN che inizia con IE)."
+    etf:
+      - nome: "Vanguard FTSE All-World UCITS ETF (USD) Accumulating"
+        isin: IE00BK5BQT80
+        ticker: VWCE
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BK5BQT80"
+      - nome: "iShares MSCI ACWI UCITS ETF (Acc)"
+        isin: IE00B6R52259
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B6R52259"
+      - nome: "SPDR MSCI ACWI IMI UCITS ETF (Acc)"
+        isin: IE00B3YLTY66
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B3YLTY66"
+      - nome: "iShares Core MSCI World UCITS ETF USD (Acc)"
+        isin: IE00B4L5Y983
+        note: "Solo paesi sviluppati, niente emergenti"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B4L5Y983"
+      - nome: "Xtrackers MSCI World ex USA UCITS ETF 1C"
+        isin: IE0006WW1TQ4
+        note: "USA esclusi"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE0006WW1TQ4"
+      - nome: "Xtrackers MSCI World ESG UCITS ETF 1C"
+        isin: IE00BZ02LR44
+        note: "ESG"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BZ02LR44"
+
+  - id: europa
+    nome: "Europa"
+    etf:
+      - nome: "iShares Core MSCI Europe UCITS ETF EUR (Acc)"
+        isin: IE00B4K48X80
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B4K48X80"
+      - nome: "Lyxor Core STOXX Europe 600"
+        isin: LU0908500753
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU0908500753"
+      - nome: "Amundi MSCI Nordic UCITS ETF EUR"
+        isin: LU1681044647
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1681044647"
+      - nome: "Amundi MSCI Eastern Europe Ex Russia UCITS ETF"
+        isin: LU1900066462
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1900066462"
+
+  - id: oceania
+    nome: "Oceania"
+    etf:
+      - nome: "iShares Core MSCI Pacific ex Japan UCITS ETF (Acc)"
+        isin: IE00B52MJY50
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B52MJY50"
+
+  - id: asia
+    nome: "Asia"
+    etf:
+      - nome: "iShares MSCI EM Asia UCITS ETF (Acc)"
+        isin: IE00B5L8K969
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B5L8K969"
+      - nome: "SPDR MSCI EM Asia UCITS ETF"
+        isin: IE00B466KX20
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B466KX20"
+      - nome: "iShares MSCI China A UCITS ETF"
+        isin: IE00BQT3WG13
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BQT3WG13"
+      - nome: "Amundi MSCI Japan UCITS ETF Acc"
+        isin: LU1781541252
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1781541252"
+
+  - id: america
+    nome: "America"
+    nota: "L'indice Equal Weight pesa le azioni tutte uguali e non in base al market cap."
+    etf:
+      - nome: "Xtrackers S&P 500 Equal Weight UCITS ETF 1C"
+        isin: IE00BLNMYC90
+        note: "Equal weight"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BLNMYC90"
+
+  - id: america-latina
+    nome: "America Latina"
+    etf:
+      - nome: "Amundi MSCI Emerging Markets Latin America UCITS ETF EUR C"
+        isin: LU1681045024
+        note: "Replica sintetica (SWAP)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1681045024"
+
+  - id: emergenti
+    nome: "Emergenti"
+    etf:
+      - nome: "iShares Core MSCI Emerging Markets IMI UCITS ETF (Acc)"
+        isin: IE00BKM4GZ66
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BKM4GZ66"
+      - nome: "iShares MSCI EM ex-China UCITS ETF USD (Acc)"
+        isin: IE00BMG6Z448
+        note: "Senza Cina"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BMG6Z448"
+      - nome: "Amundi MSCI Emerging Ex China UCITS ETF Acc"
+        isin: LU2009202107
+        note: "Senza Cina, replica sintetica (SWAP)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU2009202107"
+
+  - id: fattoriali
+    nome: "Smart beta (fattoriali)"
+    video: "https://www.youtube.com/watch?v=E_gBLbxBcXM"
+    etf:
+      - nome: "iShares Edge MSCI World Quality Factor UCITS ETF (Acc)"
+        isin: IE00BP3QZ601
+        note: "Quality, mondo"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BP3QZ601"
+      - nome: "Xtrackers MSCI World Quality Factor UCITS ETF 1C"
+        isin: IE00BL25JL35
+        note: "Quality, mondo"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BL25JL35"
+      - nome: "Amundi MSCI Europe Quality Factor UCITS ETF EUR C"
+        isin: LU1681041890
+        note: "Quality, Europa"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1681041890"
+      - nome: "iShares Edge MSCI World Value Factor UCITS ETF"
+        isin: IE00BP3QZB59
+        note: "Value — informarsi sulla differenza Value vs Enhanced Value (revisione settoriale), video: https://www.youtube.com/watch?v=u8sszjd2uH8"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BP3QZB59"
+      - nome: "iShares Edge MSCI World Minimum Volatility UCITS ETF USD (Acc)"
+        isin: IE00B8FHGS14
+        note: "Minimum volatility"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B8FHGS14"
+      - nome: "iShares Edge MSCI World Momentum Factor UCITS ETF (Acc)"
+        isin: IE00BP3QZ825
+        note: "Momentum"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BP3QZ825"
+
+  - id: small-cap
+    nome: "Small cap"
+    nota: "Aziende capitalizzate meno di 2 miliardi."
+    etf:
+      - nome: "iShares MSCI World Small Cap UCITS ETF"
+        isin: IE00BF4RFH31
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BF4RFH31"
+      - nome: "SPDR MSCI World Small Cap UCITS ETF"
+        isin: IE00BCBJG560
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BCBJG560"
+      - nome: "SPDR Russell 2000 US Small Cap UCITS ETF"
+        isin: IE00BJ38QD84
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BJ38QD84"
+      - nome: "iShares MSCI EMU Small Cap UCITS ETF (Acc)"
+        isin: IE00B3VWMM18
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B3VWMM18"
+      - nome: "SPDR MSCI USA Small Cap Value Weighted UCITS ETF"
+        isin: IE00BSPLC413
+        note: "Small cap value USA"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BSPLC413"
+      - nome: "SPDR MSCI Europe Small Cap Value Weighted UCITS ETF"
+        isin: IE00BSPLC298
+        note: "Small cap value Europa"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BSPLC298"
+
+  - id: golden-butterfly-usa
+    nome: "Lazy portfolio — Golden Butterfly (versione USA, non adattata)"
+    nota: "Composizione originale non adattata per investitori europei; video: https://www.youtube.com/watch?v=D0HqEAiQNws — le versioni adattate sono nella sezione Portafogli."
+    etf:
+      - nome: "Xtrackers MSCI USA UCITS ETF 1C"
+        isin: IE00BJ0KDR00
+        note: "USA large cap"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BJ0KDR00"
+      - nome: "SPDR MSCI USA Small Cap Value Weighted UCITS ETF"
+        isin: IE00BSPLC413
+        note: "Small cap value (fondo un po' piccolo)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BSPLC413"
+      - nome: "iShares USD Treasury Bond 1-3yr UCITS ETF (Acc)"
+        isin: IE00B3VWN179
+        note: "Obbligazioni USA brevi"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B3VWN179"
+      - nome: "Amundi Euro Government Bond 15+Y UCITS ETF Acc"
+        isin: LU1287023268
+        note: "Obbligazioni lungo termine EUR"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1287023268"
+      - nome: "WisdomTree Physical Swiss Gold"
+        isin: JE00B588CD74
+        note: "Oro"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=JE00B588CD74"
+
+  - id: lifestrategy
+    nome: "ETF LifeStrategy (multi-asset Vanguard)"
+    etf:
+      - nome: "Vanguard LifeStrategy 80% Equity UCITS ETF (EUR) Accumulating"
+        isin: IE00BMVB5R75
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BMVB5R75"
+      - nome: "Vanguard LifeStrategy 60% Equity UCITS ETF Accumulating"
+        isin: IE00BMVB5P51
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BMVB5P51"
+      - nome: "Vanguard LifeStrategy 40% Equity UCITS ETF Accumulating"
+        isin: IE00BMVB5M21
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BMVB5M21"
+      - nome: "Vanguard LifeStrategy 20% Equity UCITS ETF Accumulating"
+        isin: IE00BMVB5K07
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BMVB5K07"
+
+  - id: obbligazionari
+    nome: "ETF obbligazionari"
+    nota: "Gli ETF obbligazionari non garantiscono il capitale, perché in ogni momento rispecchiano il valore dei bond nel mercato secondario; ma quando scendono di valore aumenta il rendimento atteso. Il periodo di detenzione appropriato è più o meno uguale alla durata: un aumento dei tassi è negativo per chi detiene meno della durata, positivo per chi detiene più a lungo. Approfondimenti: https://www.bogleheads.org/forum/viewtopic.php?t=360575 e https://ofdollarsanddata.com/why-you-dont-lose-money-in-bonds-if-you-wait-long-enough/"
+    etf:
+      - nome: "Vanguard EUR Eurozone Government Bond UCITS ETF Accumulating"
+        isin: IE00BH04GL39
+        note: "Obbligazioni governative europee"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BH04GL39"
+      - nome: "Vanguard Global Aggregate Bond UCITS ETF EUR Hedged Accumulating"
+        isin: IE00BG47KH54
+        note: "Obbligazioni corporate e governative mondiali, copertura valutaria in EUR"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BG47KH54"
+      - nome: "Amundi Euro Government Inflation-Linked Bond UCITS ETF Acc"
+        isin: LU1650491282
+        note: "Obbligazioni legate all'inflazione (TIPS europei)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1650491282"
+      - nome: "iShares Fallen Angels High Yield Corporate Bond UCITS ETF"
+        isin: IE00BYM31M36
+        note: "Obbligazioni corporate rischiose (high yield)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BYM31M36"
+
+  - id: monetari
+    nome: "ETF monetari — fondo d'emergenza"
+    etf:
+      - nome: "Xtrackers II EUR Overnight Rate Swap UCITS ETF 1C"
+        isin: LU0290358497
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU0290358497"
+      - nome: "iShares Euro Government Bond 0-1yr UCITS ETF"
+        isin: IE00B3FH7618
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B3FH7618"
+
+  - id: obbligazionari-a-scadenza
+    nome: "ETF obbligazionari a scadenza — spese previste o prevedibili"
+    nota: "ETF obbligazionari a scadenza, governativi europei ad accumulo."
+    etf:
+      - nome: "iShares iBonds Dec 2027 Term EUR Corporate UCITS ETF EUR (Acc)"
+        isin: IE000ZOI8OK5
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE000ZOI8OK5"
+      - nome: "Amundi Fixed Maturity 2029 Euro Government Bond Broad UCITS ETF Acc"
+        isin: LU2872291781
+        justetf: "https://www.justetf.com/en/etf-profile.html?isin=LU2872291781"
+      - nome: "Amundi Fixed Maturity 2028 Euro Government Bond Broad UCITS ETF Acc"
+        isin: LU2780871310
+        justetf: "https://www.justetf.com/en/etf-profile.html?isin=LU2780871310"
+
+  - id: oro
+    nome: "ETC oro"
+    etf:
+      - nome: "Invesco Physical Gold A"
+        isin: IE00B579F325
+        ticker: SGLD
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B579F325"
+      - nome: "iShares Physical Gold ETC"
+        isin: IE00B4ND3602
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B4ND3602"
+
+  - id: quantistici
+    nome: "ETF quantistici termogravitonici cibernetici"
+    nota: "Il nome della categoria è uno scherzo del gruppo: strumenti esotici, da capire bene prima di toccarli. Video: https://www.youtube.com/watch?v=XMt1EKLE9Xk"
+    etf:
+      - nome: "Ossiam Shiller Barclays CAPE US Sector Value TR UCITS ETF 1C (USD)"
+        isin: LU1079841513
+        note: "Settori S&P con CAPE più basso"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1079841513"
+      - nome: "JPMorgan Global Equity Multi-Factor UCITS ETF Accumulating"
+        isin: IE00BJRCLL96
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BJRCLL96"
+      - nome: "WisdomTree Global Efficient Core UCITS ETF USD Unhedged Acc"
+        isin: IE00077IIPQ8
+        note: "90/60 azioni-obbligazioni"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00077IIPQ8"
+
+  - id: compensazione-minusvalenze
+    nome: "Strumenti per compensazione minusvalenze"
+    etf:
+      - nome: "WisdomTree World ETN"
+        isin: XS3151433813
+        note: "Global market; rischio controparte per i futures"
