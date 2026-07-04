@@ -1,0 +1,420 @@
+﻿===== FILE: Invesco Physical Gold ETC 2fe28c238162806e9323e6b82888929c.html =====
+Invesco Physical Gold ETC
+Invesco Physical Gold ETC
+%
+15%
+ISIN
+IE00B579F325
+JustETF
+https://www.justetf.com/it/etf-profile.html?isin=IE00B579F325
+Ticker
+SGLD
+commento
+Valutare in questa % di far rientrare commodity, altri metalli o crypto
+===== FILE: SPDR Bloomberg Global Aggregate Bond EUR Hedged Ac 2fe28c23816280f49209c46c7b3af1f5.html =====
+SPDR Bloomberg Global Aggregate Bond EUR Hedged Acc
+SPDR Bloomberg Global Aggregate Bond EUR Hedged Acc
+%
+15%
+ISIN
+IE000AQ7A2X6
+JustETF
+https://www.justetf.com/it/etf-profile.html?isin=IE000AQ7A2X6
+Ticker
+SPFF
+commento
+Consigliava l’equivalente iShares più capitalizzato, con SPDR ci prendi con lo Spread ma diversifichi l’emittente
+===== FILE: Vanguard FTSE All-World UCITS ETF Acc 2fe28c23816280478404ff30ec0cbea1.html =====
+Vanguard FTSE All-World UCITS ETF Acc
+Vanguard FTSE All-World UCITS ETF Acc
+%
+45%
+ISIN
+IE00BK5BQT80
+JustETF
+https://www.justetf.com/it/etf-profile.html?isin=IE00BK5BQT80
+Ticker
+VWCE
+commento
+Azioni globali (valutare se ridurre e aggiungere small cap value globali)
+===== FILE: Xtrackers Eurozone Government Bond 1-3 UCITS ETF 1 2fe28c2381628067a859d3eb2d1f23d0.html =====
+Xtrackers Eurozone Government Bond 1-3 UCITS ETF 1C
+Xtrackers Eurozone Government Bond 1-3 UCITS ETF 1C
+%
+10%
+ISIN
+LU0290356871
+JustETF
+https://www.justetf.com/it/etf-profile.html?isin=LU0290356871#panoramica
+Ticker
+X13E
+commento
+Consigliava “SMART” di Amundi, abbastanza equivalente ma meno rischioso
+===== FILE: Xtrackers Eurozone Government Bond 15-30 2fe28c238162805b8193f4143b46cbb3.html =====
+Xtrackers Eurozone Government Bond 15-30
+Xtrackers Eurozone Government Bond 15-30
+%
+15%
+ISIN
+LU0290357507
+JustETF
+https://www.justetf.com/it/etf-profile.html?isin=LU0290357507
+Ticker
+X15E
+commento
+Lui consigliava un ETF iShares più capitalizzato ma a distribuzione
+===== FILE: Golden Butterfly The Bull 2fe28c238162803f872ee2dca3f43876.html =====
+Golden Butterfly The Bull
+Golden Butterfly The Bull
+The bull in un video propone un portafoglio per principianti ispirandosi al Golden Butterfly, ma adattandolo ad investitori europei inesperti. Questo portafoglio ha un buon rendimento atteso, ma soprattutto se ribilanciato correttamente tende ad avere una minore volatilità, pur soffrendo by design il fenomeno del single line fallacy, ovvero che in qualunque periodo ci sarà uno di questi strumenti che sottoperformerà; inoltre in generale nei periodi di bull market sottoperforma (rischio FOMO).
+Nome ETF - ETF
+ISIN
+Ticker
+%
+commento
+JustETF
+Vanguard FTSE All-World UCITS ETF Acc
+IE00BK5BQT80
+VWCE
+45%
+Azioni globali (valutare se ridurre e aggiungere small cap value globali)
+https://www.justetf.com/it/etf-profile.html?isin=IE00BK5BQT80
+Xtrackers Eurozone Government Bond 15-30
+LU0290357507
+X15E
+15%
+Lui consigliava un ETF iShares più capitalizzato ma a distribuzione
+https://www.justetf.com/it/etf-profile.html?isin=LU0290357507
+SPDR Bloomberg Global Aggregate Bond EUR Hedged Acc
+IE000AQ7A2X6
+SPFF
+15%
+Consigliava l’equivalente iShares più capitalizzato, con SPDR ci prendi con lo Spread ma diversifichi l’emittente
+https://www.justetf.com/it/etf-profile.html?isin=IE000AQ7A2X6
+Xtrackers Eurozone Government Bond 1-3 UCITS ETF 1C
+LU0290356871
+X13E
+10%
+Consigliava “SMART” di Amundi, abbastanza equivalente ma meno rischioso
+https://www.justetf.com/it/etf-profile.html?isin=LU0290356871#panoramica
+Invesco Physical Gold ETC
+IE00B579F325
+SGLD
+15%
+Valutare in questa % di far rientrare commodity, altri metalli o crypto
+https://www.justetf.com/it/etf-profile.html?isin=IE00B579F325
+===== FILE: Confronto emittenti fondi secondo Alessandro Lazza 16828c23816280ddaffbf1f2d7cc2cd2.html =====
+Confronto emittenti fondi secondo Alessandro Lazzaro
+Confronto emittenti fondi secondo Alessandro Lazzaro
+Questa pagina riassume un paio di video del corso “accumulare capitale” e “reddito da capitale” del Consulente Finanziario indipendente Alessandro Lazzaro. I dati non sono aggiornati chiaramente ma fornisce un’idea della differenza tra i più grossi emettenti di ETF.
+Con Base in Europa:
+Qui di seguito altre considerazioni o reminder scaturiti sempre da quei due videocorsi, ma non c’entrano con i gestori di fondi.
+7. Portafoglio Finale - i 3 ETF.pdf
+Fondi Americani: Irlanda >> Lussemburgo (Witholding Tax USA)
+Attenzione al turnover negli indici, aumento di costi e tracking error.
+PRINCIPALI INDICI HIGH YIELD, combina factor Quality e Value indirettamente
+(reminder, valutare la replica sintetica/mista per vantaggio fiscale dividendi USA)
+===== FILE: ETF Selezionati 60dca48327ad412ea22c03e32fafd0c2.html =====
+ETF Selezionati
+ETF Selezionati
+Mondo
+FTSE All World e MSCI ACWI comprendonogli emergenti mentre MSCI World no; occhio ad usare fondi irlandesi per la witholding tax statunitente (ISIN che inizia con IE)
+Vanguard FTSE All-World UCITS ETF (USD) Accumulating
+IE00BK5BQT80
+iShares MSCI ACWI UCITS ETF (Acc)
+IE00B6R52259
+SPDR MSCI ACWI
+IMI
+UITS ETF (Acc)
+IE00B3YLTY66
+iShares Core MSCI World UCITS ETF USD (Acc )
+IE00B4L5Y983
+Xtrackers MSCI World ex USA UCITS ETF 1C
+(USA ESCLUSI)
+IE0006WW1TQ4
+Xtrackers MSCI World ESG UCITS ETF 1C
+(ESG)
+IE00BZ02LR44
+Europa
+iShares Core MSCI Europe UCITS ETF EUR (Acc)
+IE00B4K48X80
+Lyxor Core STOXX Europe 600
+LU0908500753
+Amundi MSCI Nordic UCITS ETF EUR
+LU1681044647
+Amundi MSCI Eastern Europe Ex Russia UCITS ETF
+LU1900066462
+Oceania
+iShares Core MSCI Pacific ex Japan UCITS ETF (Acc)
+IE00B52MJY50
+Asia
+iShares MSCI EM Asia UCITS ETF (Acc)
+IE00B5L8K969
+SPDR MSCI EM Asia UCITS ETF
+IE00B466KX20
+iShares MSCI China A UCITS ETF
+IE00BQT3WG13
+Amundi MSCI Japan UCITS ETF Acc
+LU1781541252
+America
+L’indice Equal Weight pesa le azioni tutte uguali e non in base al MarketCap
+Xtrackers S&P 500
+Equal Weight
+UCITS ETF 1C
+IE00BLNMYC90
+America Latina
+Amundi MSCI Emerging Markets Latin America UCITS ETF EUR C
+LU1681045024
+(SWAP)
+Emergenti
+iShares Core MSCI Emerging Markets IMI UCITS ETF (Acc)
+IE00BKM4GZ66
+iShares MSCI EM
+ex-China
+UCITS ETF USD (Acc)
+IE00BMG6Z448 (no cina)
+Amundi MSCI Emerging
+Ex China
+UCITS ETF Acc
+LU2009202107 (no cina)
+[SWAP]
+Smart Beta
+(FACTOR)
+iShares Edge MSCI World Quality Factor UCITS ETF (Acc)
+IE00BP3QZ601 (mondo) QF
+Xtrackers MSCI World Quality Factor UCITS ETF 1C
+IE00BL25JL35 (mondo) QF
+Amundi MSCI Europe Quality Factor UCITS ETF EUR C
+LU1681041890 (europa) QF
+iShares Edge MSCI World Value Factor UCITS ETF
+IE00BP3QZB59 (VF) -
+informarsi
+sulla differenza Value vs Enhanced Value (revisione settoriale)
+iShares Edge MSCI World Minimum Volatility UCITS ETF USD (Acc)
+IE00B8FHGS14
+iShares Edge MSCI World Momentum Factor UCITS ETF (Acc
+)
+IE00BP3QZ825
+Momentum
+Small CAP
+Aziende Capitalizzate meno di 2 Miliardi
+iShares MSCI World Small Cap UCITS ETF
+IE00BF4RFH31
+SPDR MSCI World Small Cap UCITS ETF
+IE00BCBJG560
+SPDR Russell 2000 US Small Cap UCITS ETF
+IE00BJ38QD84
+iShares MSCI EMU Small Cap UCITS ETF (Acc)
+IE00B3VWMM18
+SPDR MSCI USA Small Cap Value Weighted UCITS ETF
+IE00BSPLC413 (value USA)
+SPDR MSCI Europe Small Cap Value Weighted UCITS ETF
+IE00BSPLC298
+(value EU)
+Lazy Portfolio
+GOLDEN BUTTERFLY
+NON ADATTATO PER INVESTITORI EUROPEI:
+Xtrackers MSCI USA UCITS ETF 1C
+I
+IE00BJ0KDR00 (USA LARGE CAP)
+SPDR MSCI USA Small Cap Value Weighted UCITS ETF
+IE00BSPLC413 (SMALL CAP VALUE, è un po’ piccolo)
+iShares USD Treasury Bond 1-3yr UCITS ETF (Acc)
+IE00B3VWN179 (Obbligazioni USA Brevi)
+Amundi Euro Government Bond 15+Y UCITS ETF Acc
+LU1287023268 (Obbligazioni Lungo Termine EUR)
+WisdomTree Physical Swiss Gold
+JE00B588CD74 (ORO)
+ADATTATO PER INVESTITORI EUROPEI
+: (coming soon)
+GOLDEN BUTTERFLY Europeizzato The Bull
+Golden Butterfly The Bull
+All Weather - All Season (EU)
+Adattato ad investitori europei:
+30%
+Vanguard FTSE All-World UCITS ETF (USD) Accumulating
+IE00BK5BQT80
+20%
+iShares USD Treasury Bond 20+yr UCITS ETF USD (Acc)
+IE00BFM6TC58
+20%
+Amundi Euro Government Bond 15+Y UCITS ETF Acc
+LU1287023268
+15%
+Vanguard Global Aggregate Bond UCITS ETF EUR Hed Acc
+IE00BG47KH54
+7,5%
+Invesco Physical Gold A
+IE00B579F325
+7,5%
+iShares Diversified Commodity Swap UCITS ETF
+IE00BDFL4P12
+ETF Lifestrategy
+Vanguard LifeStrategy 80% Equity UCITS ETF (EUR) Accumulating
+IE00BMVB5R75
+Vanguard LifeStrategy 60% Equity UCITS ETF Accumulating
+IE00BMVB5P51
+Vanguard LifeStrategy 40% Equity UCITS ETF Accumulating
+IE00BMVB5M21
+Vanguard LifeStrategy 20% Equity UCITS ETF Accumulating
+IE00BMVB5K07
+ETF OBBLIGAZIONARI
+Gli
+ETF obbligazionari , non garantiscono il capitale, perchè in ogni momento rispecchiano il valore dei bond nel mercato secondario; ma quando scendono di valore aumenta il rendimento atteso che è dato dalla media pesata dei rendimenti attesa alle scadenze attese. IL periodo di detenzione appropriato è più o meno uguale alla durata; la "durata" del fondo obbligazionario è il periodo di tempo in cui gli effetti a breve e lungo termine di un aumento dei tassi di interesse si bilanciano un aumento dei tassi di interesse è negativo per un investitore che detiene per meno della durata, positivo per un investitore che detiene per più tempo.
+Vanguard EUR Eurozone Government Bond UCITS ETF Accumulating
+IE00BH04GL39 - Obbligazioni Governative europee
+Vanguard Global Aggregate Bond UCITS ETF EUR Hedged Accumulating
+IE00BG47KH54 - Obbligazioni Corporate e Governative mondiali coperte ripsetto alla volatitlità dell’Euro
+Amundi Euro Government
+Inflation-Linked
+Bond UCITS ETF Acc
+LU1650491282 (TIPS) (obbligazioni legate all’inflazione)
+iShares Fallen Angels High Yield Corporate Bond UCITS ETF
+IE00BYM31M36 - Obbligazioni Corporate Rischiose
+ETF Monetari -
+fondo d’emergenza
+Xtrackers II EUR Overnight Rate Swap UCITS ETF 1C
+LU0290358497
+iShares Euro Government Bond 0-1yr UCITS ETF
+IE00B3FH7618
+ETF obb a scadenza -
+spese previste / prevedibili
+ETF obbligazionari a scadenza, governativi europei ad accumulo
+iShares iBonds Dec 2027 Term EUR Corporate UCITS ETF EUR (Acc)
+IE000ZOI8OK5
+Amundi Fixed Maturity 2029 Euro Government Bond Broad UCITS ETF Acc
+LU2872291781
+Amundi Fixed Maturity 2028 Euro Government Bond Broad UCITS ETF Acc
+LU2780871310
+ETC ORO
+Invesco Physical Gold A
+IE00B579F325
+iShares Physical Gold ETC
+IE00B4ND3602
+ETF quantistici termogravitonici cibernetici
+Ossiam Shiller Barclays CAPE® US Sector Value TR UCITS ETF 1C (USD)
+LU1079841513
+(settori S&P con CAPE più basso)
+JPMorgan Global Equity Multi-Factor UCITS ETF Accumulating
+IE00BJRCLL96
+WisdomTree Global Efficient Core UCITS ETF USD Unhedged Acc
+IE00077IIPQ8
+90/60 Azioni-Obbligazioni
+Strumenti per compensazione minusvalenze
+WisdomTree World ETN (rischio controparte x futures)
+XS3151433813
+global market
+===== FILE: HUB utilities 72f7b821b4c84a21b28e6ba4b7d21b91.html =====
+HUB utilities
+HUB utilities
+EXCEL AGGIORNATO CONTI CORRENTE
+EXCEL AGGIORNATO CONTI DEPOSITO
+Sito per Valutare le Obbligazioni
+TASSAZIONE BROKER ESTERI
+Foglio Google Spreadsheet + Google Moduli x spese e patrimonio
+SpesometroMarietto.pdf
+Sito per visualizzare Rendimento / Volatilità asset class:
+https://interactive.researchaffiliates.com/asset-allocation#!/?currency=USD&email=undefined&model=ER&scale=LINEAR&terms=REAL&type=Equities
+https://www.lazyportfolioetf.com/
+https://portfoliocharts.com/
+===== FILE: Open Questions 1b428c238162803f9c92fa175a1a101c.html =====
+Open Questions
+Open Questions
+Come mai, se acquisto un ETF da una borsa, non posso rivenderlo in un’altra.
+Cosa succede se compro due ETF uguali da due borse diverse al prezzo di carico
+Funzionamento quote frazionate nel momento in cui si “convertono” a quote intere
+ETN Azionari e Obbligazionari efficienti
+ETF a Leva
+Hedging su small cap
+Analisi avantis e dimensionale, ucits, non ucits e passive
+===== FILE: To do 2b628c238162803ba558d3349f96fad6.html =====
+To do
+To do
+Keyword prossime slide: fiscalità, obb Vs ETF obb, conto titoli, market maker, rischi ETF, fattoriali, diversificazione geografica
+To do: descrizione dei principali indici e fattoriali, quadro dettagliato sulla fiscalità
+Articolo sui Bond
+per approfondire la differenza tra fondi e obbligazioni singole
+Valutare TILT small cap EMU Valutare diversificazione stoxx 600 con EMU
+===== FILE: Wall Street Hub b843185caccf48d9a7ffda9aa51b7423.html =====
+Wall Street Hub
+Wall Street Hub
+ETF Selezionati
+🔶
+JustETF
+Indici di Mercato (fondo pagina)
+Corsi, Fonti Video, Libri, Dispense e Slide
+Fonti video per cominciare
+📽️
+Educati e Finanziati
+-
+Videocorso di Finanza Personale
+( Paolo Coletti
+PhD - RTDA
+in finanza)
+🐂
+The Bull
+-
+Guida Pratica
+-
+🎥
+FAQ
+(
+Riccardo Spada
+MBA - Podcaster
+)
+💰
+Video Corsi
+:
+Accumulare Capitale
+&
+Rendite da Capitale ( Alessandro Lazzaro
+CFI
+- SCF )
+Fonti per approfondire
+🐂
+The Bull.
+Podcast di finanza personale settimanale.
+Spotify
+/
+Youtube
+-
+selezione podcast
+📽️
+Playlist Investimenti
+- Qui aggiungo vari video interessanti
+🎧
+Too Big to Fail
+- podcast interessante “emergente”
+📃
+Notebook
+(AI conversazionale sulla finanza, addestrata sulle fonti di questa pagina)
+📔
+Libri e Guide
+Dispensa_Educati e Finanziati.pdf
+Omney
+- La Guida Definitiva Sugli Investimenti.pdf
+Slide Personal Finance .pdf
+Strumenti Vari
+👵🏽
+Calcolatore Fondi Pensione
+(BETA) - per il resto rifatevi a
+CiaoElsa.com
+o Agli Spreadsheet
+HUB utilities
+📊
+SpreadSheet
+🐍
+Simulazioni Python e considerazioni
+🖥️
+Software per BackTest
+(Curvo)
+🖥️
+BackTest Factor Analysis
+(Beta)
+📈
+Software per TrackingDifferences
+📜
+Modello di Investment Policy Statement
+Confronto emittenti fondi secondo Alessandro Lazzaro
+To do
+Open Questions

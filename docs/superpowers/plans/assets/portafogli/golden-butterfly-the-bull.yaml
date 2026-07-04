@@ -1,0 +1,36 @@
+nome: "Golden Butterfly The Bull"
+slug: golden-butterfly-the-bull
+descrizione: >-
+  The Bull in un video propone un portafoglio per principianti ispirandosi al
+  Golden Butterfly, ma adattandolo a investitori europei inesperti. Ha un buon
+  rendimento atteso e, se ribilanciato correttamente, una minore volatilità.
+  Soffre by design della single line fallacy (in qualunque periodo uno degli
+  strumenti sottoperformerà) e nei bull market tende a restare indietro
+  (rischio FOMO).
+ribilanciamento: annuale
+allocazioni:
+  - asset: "Azioni globali"
+    peso: 0.45
+    proxy: VT
+    etf_reale: { nome: "Vanguard FTSE All-World UCITS ETF Acc", isin: IE00BK5BQT80, ticker: VWCE }
+    commento: "Valutare se ridurre e aggiungere small cap value globali"
+  - asset: "Obbligazioni governative EUR lunghe (15-30 anni)"
+    peso: 0.15
+    proxy: TLT
+    etf_reale: { nome: "Xtrackers Eurozone Government Bond 15-30", isin: LU0290357507, ticker: X15E }
+    commento: "Consigliava un ETF iShares più capitalizzato ma a distribuzione"
+  - asset: "Obbligazioni globali aggregate EUR hedged"
+    peso: 0.15
+    proxy: BND
+    etf_reale: { nome: "SPDR Bloomberg Global Aggregate Bond EUR Hedged Acc", isin: IE000AQ7A2X6, ticker: SPFF }
+    commento: "Consigliava l'equivalente iShares più capitalizzato; con SPDR paghi lo spread ma diversifichi l'emittente"
+  - asset: "Obbligazioni governative EUR brevi (1-3 anni)"
+    peso: 0.10
+    proxy: SHY
+    etf_reale: { nome: "Xtrackers Eurozone Government Bond 1-3 UCITS ETF 1C", isin: LU0290356871, ticker: X13E }
+    commento: "Consigliava lo SMART di Amundi, abbastanza equivalente ma meno rischioso"
+  - asset: "Oro fisico"
+    peso: 0.15
+    proxy: GLD
+    etf_reale: { nome: "Invesco Physical Gold ETC", isin: IE00B579F325, ticker: SGLD }
+    commento: "Valutare in questa % di far rientrare commodity, altri metalli o crypto"

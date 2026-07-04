@@ -1,0 +1,18 @@
+nome: "LifeStrategy 60"
+slug: lifestrategy-60
+descrizione: >-
+  Il classico bilanciato 60/40 nella versione a fondo unico di Vanguard:
+  60% azioni globali e 40% obbligazioni globali con copertura valutaria,
+  ribilanciato automaticamente dal gestore. La via più semplice per avere
+  un portafoglio diversificato con un solo strumento.
+ribilanciamento: annuale
+allocazioni:
+  - asset: "Azioni globali"
+    peso: 0.60
+    proxy: VT
+    etf_reale: { nome: "Vanguard LifeStrategy 60% Equity UCITS ETF Accumulating", isin: IE00BMVB5P51 }
+    commento: "L'ETF reale è un fondo unico: il backtest replica la sua composizione 60/40"
+  - asset: "Obbligazioni globali aggregate hedged"
+    peso: 0.40
+    proxy: BND
+    etf_reale: { nome: "Vanguard LifeStrategy 60% Equity UCITS ETF Accumulating", isin: IE00BMVB5P51 }
