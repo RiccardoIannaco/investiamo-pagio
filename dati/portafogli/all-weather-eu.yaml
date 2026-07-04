@@ -1,0 +1,34 @@
+nome: "All Weather — All Season (EU)"
+slug: all-weather-eu
+descrizione: >-
+  L'All Weather di Ray Dalio adattato a investitori europei: pensato per
+  reggere in ogni scenario macro (crescita, recessione, inflazione,
+  deflazione) bilanciando azioni, obbligazioni lunghe, oro e materie prime.
+  Video di riferimento: https://youtu.be/CRnNPxhCZGM
+ribilanciamento: annuale
+allocazioni:
+  - asset: "Azioni globali"
+    peso: 0.30
+    proxy: VT
+    etf_reale: { nome: "Vanguard FTSE All-World UCITS ETF (USD) Accumulating", isin: IE00BK5BQT80, ticker: VWCE }
+  - asset: "Obbligazioni USA lunghe (20+ anni)"
+    peso: 0.20
+    proxy: TLT
+    etf_reale: { nome: "iShares USD Treasury Bond 20+yr UCITS ETF USD (Acc)", isin: IE00BFM6TC58 }
+  - asset: "Obbligazioni governative EUR lunghe (15+ anni)"
+    peso: 0.20
+    proxy: TLT
+    etf_reale: { nome: "Amundi Euro Government Bond 15+Y UCITS ETF Acc", isin: LU1287023268 }
+    commento: "Nel backtest usa lo stesso proxy della gamba USA lunga: limite dichiarato nella nota metodologica"
+  - asset: "Obbligazioni globali aggregate EUR hedged"
+    peso: 0.15
+    proxy: BND
+    etf_reale: { nome: "Vanguard Global Aggregate Bond UCITS ETF EUR Hed Acc", isin: IE00BG47KH54 }
+  - asset: "Oro fisico"
+    peso: 0.075
+    proxy: GLD
+    etf_reale: { nome: "Invesco Physical Gold A", isin: IE00B579F325, ticker: SGLD }
+  - asset: "Materie prime"
+    peso: 0.075
+    proxy: DBC
+    etf_reale: { nome: "iShares Diversified Commodity Swap UCITS ETF", isin: IE00BDFL4P12 }

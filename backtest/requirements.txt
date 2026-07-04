@@ -1,0 +1,4 @@
+﻿pandas>=2.2
+yfinance>=0.2.40
+PyYAML>=6
+pytest>=8

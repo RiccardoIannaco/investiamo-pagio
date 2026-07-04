@@ -1,0 +1,12 @@
+nome: "100% azionario globale"
+slug: azionario-globale-100
+descrizione: >-
+  Il termine di paragone: tutto in azioni globali. Massimo rendimento atteso
+  e massima volatilità; ha senso solo su orizzonti lunghi e per chi regge i
+  drawdown senza vendere.
+ribilanciamento: annuale
+allocazioni:
+  - asset: "Azioni globali"
+    peso: 1.0
+    proxy: VT
+    etf_reale: { nome: "Vanguard FTSE All-World UCITS ETF (USD) Accumulating", isin: IE00BK5BQT80, ticker: VWCE }
