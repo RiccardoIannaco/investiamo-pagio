@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import BadgeTipo from '../../components/BadgeTipo.astro';
+import { getCollection, render } from 'astro:content';
+import { href } from '../../lib/percorsi';
+
+export async function getStaticPaths() {
+  const fonti = await getCollection('fonti', (f) => f.data.stato !== 'solo-link');
+  return fonti.map((f) => ({ params: { slug: f.id }, props: { fonte: f } }));
+}
+const { fonte } = Astro.props;
+const { Content } = await render(fonte);
+---
+<Base titolo={fonte.data.titolo}>
+  <p class="kicker"><a href={href('/fonti')}>Fonti</a> / {fonte.data.tipo}</p>
+  <h1>{fonte.data.titolo}</h1>
+  <ul class="meta-riga">
+    <li><BadgeTipo tipo={fonte.data.tipo} /></li>
+    {fonte.data.autore && <li><b>Autore</b> {fonte.data.autore}</li>}
+    <li><a href={fonte.data.link} rel="noopener">Apri la fonte&thinsp;↗</a></li>
+    {fonte.data.linkAlternativi.map((l) => <li><a href={l.url} rel="noopener">{l.etichetta}&thinsp;↗</a></li>)}
+    <li><b>Stato</b> {fonte.data.stato}</li>
+  </ul>
+  <Content />
+</Base>

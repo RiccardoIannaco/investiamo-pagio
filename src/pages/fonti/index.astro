@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import BadgeTipo from '../../components/BadgeTipo.astro';
+import { getCollection } from 'astro:content';
+import { href } from '../../lib/percorsi';
+
+const fonti = (await getCollection('fonti')).sort((a, b) =>
+  a.data.titolo.localeCompare(b.data.titolo, 'it'),
+);
+const tipi = ['video', 'podcast', 'libro', 'paper', 'corso', 'sito'];
+---
+<Base titolo="Fonti" descrizione="Video, podcast, libri e paper selezionati dal gruppo, con i concetti da portarsi a casa.">
+  <p class="kicker">Catalogo</p>
+  <h1>Fonti</h1>
+  <p class="muted">
+    Ogni fonte ha una scheda: prima solo il link, poi — quando qualcuno la lavora — il riassunto
+    con i concetti da portarsi a casa. Vuoi aggiungerne una?
+    <a href={href('/come-contribuire')}>Si fa in due minuti</a>.
+  </p>
+
+  <div class="filtri" role="group" aria-label="Filtra per tipo">
+    <button class="filtro attivo" data-tipo="tutti">tutte</button>
+    {tipi.map((t) => <button class="filtro" data-tipo={t}>{t}</button>)}
+  </div>
+
+  <ul class="elenco-fonti">
+    {fonti.map((f) => (
+      <li data-tipo={f.data.tipo}>
+        <BadgeTipo tipo={f.data.tipo} />
+        <span>
+          {f.data.stato === 'solo-link' ? (
+            <a href={f.data.link} rel="noopener">{f.data.titolo}&thinsp;↗</a>
+          ) : (
+            <a href={href(`/fonti/${f.id}`)}>{f.data.titolo}</a>
+          )}
+          {f.data.autore && <span class="muted"> — {f.data.autore}</span>}
+          {f.data.stato === 'riassunto' && <span class="badge stato">riassunto</span>}
+          {f.data.stato === 'in-lavorazione' && <span class="badge stato">in lavorazione</span>}
+        </span>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .filtri { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.4rem 0; }
+  .filtro {
+    background: none; border: 1px solid var(--hairline); border-radius: 3px;
+    color: var(--muted); cursor: pointer; font-size: .78rem; letter-spacing: .05em;
+    text-transform: uppercase; padding: .2rem .7rem;
+  }
+  .filtro.attivo { border-color: var(--accent); color: var(--accent); }
+  .elenco-fonti { list-style: none; padding-left: 0 !important; }
+  .elenco-fonti li {
+    display: flex; gap: .8rem; align-items: baseline;
+    padding: .55rem 0; border-bottom: 1px solid var(--hairline);
+  }
+  .elenco-fonti li.nascosta { display: none; }
+  .badge.stato { margin-left: .5rem; }
+</style>
+
+<script>
+  const bottoni = document.querySelectorAll<HTMLButtonElement>('.filtro');
+  const voci = document.querySelectorAll<HTMLLIElement>('.elenco-fonti li');
+  bottoni.forEach((b) =>
+    b.addEventListener('click', () => {
+      bottoni.forEach((x) => x.classList.remove('attivo'));
+      b.classList.add('attivo');
+      const tipo = b.dataset.tipo;
+      voci.forEach((v) => v.classList.toggle('nascosta', tipo !== 'tutti' && v.dataset.tipo !== tipo));
+    }),
+  );
+</script>
