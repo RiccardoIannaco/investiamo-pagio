@@ -17,3 +17,6 @@ venv/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Scratch di processo (ledger SDD)
+.superpowers/
