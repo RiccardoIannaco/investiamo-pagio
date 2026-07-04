@@ -1,0 +1,115 @@
+---
+import Base from '../layouts/Base.astro';
+import { caricaEtf } from '../lib/dati';
+
+const catalogo = caricaEtf();
+const tutteLeLabel = [...new Set(catalogo.categorie.flatMap((c) => c.etf.flatMap((e) => e.label)))].sort();
+const fmtTer = (t?: number) => (t == null ? '—' : t.toLocaleString('it-IT', { minimumFractionDigits: 2 }) + '%');
+---
+<Base titolo="ETF selezionati" descrizione="Il catalogo curato dal gruppo: ISIN, TER e note pratiche.">
+  <div class="colonna-larga">
+    <p class="kicker">Catalogo</p>
+    <h1>ETF selezionati</h1>
+    <p class="muted">
+      La lista curata dal gruppo, per categoria. I TER sono indicativi
+      (aggiornati al {catalogo.aggiornato}): prima di comprare verifica sempre su JustETF.
+      Clicca ⧉ per copiare l'ISIN.
+    </p>
+
+    <div class="filtri" role="group" aria-label="Filtra per caratteristica">
+      <input id="cerca-etf" type="search" placeholder="Cerca nome, ISIN o ticker…" />
+      <button class="filtro attivo" data-label="tutte">tutte</button>
+      {tutteLeLabel.map((l) => <button class="filtro" data-label={l}>{l}</button>)}
+    </div>
+
+    {catalogo.categorie.map((cat) => (
+      <section data-categoria={cat.id}>
+        <h2>{cat.nome}</h2>
+        {cat.nota && <p class="muted nota-categoria">{cat.nota}</p>}
+        {cat.video && <p class="muted nota-categoria"><a href={cat.video} rel="noopener">Video di riferimento&thinsp;↗</a></p>}
+        <div class="scorri">
+          <table>
+            <thead>
+              <tr><th>Nome</th><th>ISIN</th><th>Ticker</th><th class="num-h">TER</th><th>Label</th><th>Note</th><th></th></tr>
+            </thead>
+            <tbody>
+              {cat.etf.map((e) => (
+                <tr data-label={e.label.join(' ')} data-cerca={`${e.nome} ${e.isin} ${e.ticker ?? ''}`.toLowerCase()}>
+                  <td>{e.nome}</td>
+                  <td class="mono">{e.isin} <button class="copia" data-isin={e.isin} title={`Copia ${e.isin}`}>⧉</button></td>
+                  <td class="mono">{e.ticker ?? ''}</td>
+                  <td class="num">{fmtTer(e.ter)}</td>
+                  <td>{e.label.map((l) => <span class="badge">{l}</span>)}</td>
+                  <td class="muted note">{e.note ?? ''}</td>
+                  <td>{e.justetf && <a href={e.justetf} rel="noopener">JustETF&thinsp;↗</a>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .filtri { display: flex; gap: .45rem; flex-wrap: wrap; margin: 1.4rem 0; align-items: center; }
+  .filtri input {
+    font: inherit; font-size: .85rem; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--hairline); border-radius: 3px; padding: .25rem .6rem; min-width: 15rem;
+  }
+  .filtro {
+    background: none; border: 1px solid var(--hairline); border-radius: 3px;
+    color: var(--muted); cursor: pointer; font-size: .74rem; letter-spacing: .04em;
+    text-transform: uppercase; padding: .15rem .55rem;
+  }
+  .filtro.attivo { border-color: var(--accent); color: var(--accent); }
+  .num-h { text-align: right; }
+  .mono { font-family: var(--mono); font-size: .8rem; white-space: nowrap; }
+  .copia { cursor: pointer; border: none; background: none; color: var(--muted); font-size: .78rem; }
+  .copia:hover, .copia.fatto { color: var(--accent); }
+  td .badge { margin-right: .3rem; }
+  td.note { max-width: 20rem; font-size: .82rem; }
+  .nota-categoria { font-size: .85rem; max-width: 42rem; }
+  tr.nascosta, section.vuota { display: none; }
+</style>
+
+<script>
+  // Copia ISIN
+  document.querySelectorAll<HTMLButtonElement>('.copia').forEach((b) =>
+    b.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(b.dataset.isin ?? '');
+      b.textContent = '✓';
+      b.classList.add('fatto');
+      setTimeout(() => { b.textContent = '⧉'; b.classList.remove('fatto'); }, 1200);
+    }),
+  );
+
+  // Filtro per label + ricerca testuale
+  const bottoni = document.querySelectorAll<HTMLButtonElement>('.filtro');
+  const campo = document.getElementById('cerca-etf') as HTMLInputElement;
+  let labelAttiva = 'tutte';
+
+  function applica() {
+    const testo = campo.value.trim().toLowerCase();
+    document.querySelectorAll<HTMLTableRowElement>('tbody tr').forEach((r) => {
+      const perLabel = labelAttiva === 'tutte' || (r.dataset.label ?? '').split(' ').includes(labelAttiva);
+      const perTesto = !testo || (r.dataset.cerca ?? '').includes(testo);
+      r.classList.toggle('nascosta', !(perLabel && perTesto));
+    });
+    document.querySelectorAll<HTMLElement>('section[data-categoria]').forEach((s) => {
+      const visibili = s.querySelectorAll('tbody tr:not(.nascosta)').length;
+      s.classList.toggle('vuota', visibili === 0);
+    });
+  }
+
+  bottoni.forEach((b) =>
+    b.addEventListener('click', () => {
+      bottoni.forEach((x) => x.classList.remove('attivo'));
+      b.classList.add('attivo');
+      labelAttiva = b.dataset.label ?? 'tutte';
+      applica();
+    }),
+  );
+  campo.addEventListener('input', applica);
+</script>
