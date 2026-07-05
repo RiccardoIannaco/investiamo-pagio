@@ -223,13 +223,57 @@ categorie:
 
   - id: america
     nome: "America"
-    nota: "L'indice Equal Weight pesa le azioni tutte uguali e non in base al market cap. Categoria in ampliamento (S&P 500 core, Nasdaq-100): verifica web in corso."
+    nota: "Sull'S&P 500 core la scelta pratica è tra TER minimo (SPDR 0,03%), dimensione e liquidità (iShares) o efficienza fiscale via swap (Invesco). Non esiste un vero 'total market' USA in UCITS. L'indice Equal Weight pesa le azioni tutte uguali e non in base al market cap. Verificati su justETF (luglio 2026)."
     etf:
       - nome: "Xtrackers S&P 500 Equal Weight UCITS ETF 1C"
         isin: IE00BLNMYC90
-        label: [azionario, usa, equal-weight]
+        ticker: XDEW
+        ter: 0.15
+        label: [azionario, usa, geografico, equal-weight]
         note: "Equal weight"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BLNMYC90"
+      - nome: "iShares Core S&P 500 UCITS ETF USD (Acc)"
+        isin: IE00B5BMR087
+        ticker: CSSPX
+        ter: 0.07
+        label: [azionario, usa, geografico]
+        note: "Il più grande S&P 500 UCITS; scelta core standard (Xetra: SXR8)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B5BMR087"
+      - nome: "Vanguard S&P 500 UCITS ETF (USD) Accumulating"
+        isin: IE00BFMXXD54
+        ticker: VUAA
+        ter: 0.07
+        label: [azionario, usa, geografico]
+        note: "Replica fisica totale; esiste anche a distribuzione (VUSA)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BFMXXD54"
+      - nome: "SPDR S&P 500 UCITS ETF (Dist)"
+        isin: IE00B6YX5C33
+        ticker: SPY5
+        ter: 0.03
+        label: [azionario, usa, geografico, dividendi]
+        note: "TER tra i più bassi; distribuzione trimestrale"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B6YX5C33"
+      - nome: "SPDR S&P 500 UCITS ETF (Acc)"
+        isin: IE000XZSV718
+        ticker: SP5A
+        ter: 0.03
+        label: [azionario, usa, geografico]
+        note: "Accumulazione a 0,03%, il più economico; lanciato 2023 (Xetra: SPYL)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE000XZSV718"
+      - nome: "Invesco S&P 500 UCITS ETF Acc"
+        isin: IE00B3YCGJ38
+        ticker: SPXS
+        ter: 0.05
+        label: [azionario, usa, geografico, swap]
+        note: "Sintetico: niente ritenuta USA sui dividendi, spesso sovraperforma l'indice netto (Xetra: P500)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B3YCGJ38"
+      - nome: "iShares Nasdaq 100 UCITS ETF (Acc)"
+        isin: IE00B53SZB19
+        ticker: CNDX
+        ter: 0.30
+        label: [azionario, usa, geografico, growth]
+        note: "100 titoli non finanziari del Nasdaq, forte peso tech/growth; più volatile dell'S&P 500 (Xetra: SXRV)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B53SZB19"
 
   - id: america-latina
     nome: "America Latina"
@@ -764,9 +808,17 @@ categorie:
 
   - id: compensazione-minusvalenze
     nome: "Strumenti per compensazione minusvalenze"
-    nota: "Verifica web in corso (strumento recente)."
+    nota: "Gli ETF UCITS generano redditi di capitale e NON compensano le minusvalenze; per la compensazione servono ETC/ETN (o azioni/certificati), che generano redditi diversi. Ricordare il rischio emittente/controparte degli ETN e che le minusvalenze scadono il 31/12 del quarto anno successivo. Verificati su justETF (luglio 2026)."
     etf:
       - nome: "WisdomTree World ETN"
         isin: XS3151433813
-        label: [azionario, world, etn-etc]
-        note: "Global market; rischio controparte per i futures. Gli ETN generano redditi diversi, compensabili con le minusvalenze"
+        ticker: WWRD
+        ter: 0.12
+        label: [azionario, world, swap, etn-etc]
+        note: "Lancio 11/2025, sintetico su azionario sviluppato; AUM piccolo (~16M): occhio a spread e liquidità. ETN → redditi diversi, compensa le minusvalenze"
+      - nome: "WisdomTree S&P 500 ETN"
+        isin: XS2427355958
+        ticker: WSPX
+        ter: 0.05
+        label: [azionario, usa, swap, etn-etc]
+        note: "Su Borsa Italiana dal 2022 (~162M), accumulazione; storico più lungo e più liquidità del WWRD ma solo USA. ETN → redditi diversi"
