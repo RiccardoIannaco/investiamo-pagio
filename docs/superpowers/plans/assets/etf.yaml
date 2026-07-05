@@ -342,39 +342,86 @@ categorie:
 
   - id: fattoriali
     nome: "Smart beta (fattoriali)"
-    nota: "Video introduttivo ai fattoriali: https://www.youtube.com/watch?v=E_gBLbxBcXM — categoria in ampliamento (growth, multifattoriali): verifica web in corso."
+    nota: "Video introduttivo ai fattoriali: https://www.youtube.com/watch?v=E_gBLbxBcXM — offerta UCITS growth molto limitata (l'Amundi Russell 1000 Growth è di fatto l'unico). Attenzione ai rebranding recenti. Verificati su justETF (luglio 2026)."
     video: "https://www.youtube.com/watch?v=E_gBLbxBcXM"
     etf:
       - nome: "iShares Edge MSCI World Quality Factor UCITS ETF (Acc)"
         isin: IE00BP3QZ601
+        ticker: IWQU
+        ter: 0.25
         label: [azionario, world, quality]
-        note: "Quality, mondo"
+        note: "Quality, mondo (Xetra: IS3Q)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BP3QZ601"
-      - nome: "Xtrackers MSCI World Quality Factor UCITS ETF 1C"
+      - nome: "Xtrackers MSCI World Quality UCITS ETF 1C"
         isin: IE00BL25JL35
+        ticker: XDEQ
+        ter: 0.25
         label: [azionario, world, quality]
-        note: "Quality, mondo"
+        note: "Quality, mondo; l'emittente ha tolto 'Factor' dal nome (indice MSCI World Sector Neutral Quality)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BL25JL35"
       - nome: "Amundi MSCI Europe Quality Factor UCITS ETF EUR C"
         isin: LU1681041890
-        label: [azionario, europa, quality]
+        ticker: QCEU
+        ter: 0.23
+        label: [azionario, europa, quality, swap]
         note: "Quality, Europa"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1681041890"
       - nome: "iShares Edge MSCI World Value Factor UCITS ETF"
         isin: IE00BP3QZB59
+        ticker: IWVL
+        ter: 0.25
         label: [azionario, world, value]
-        note: "Value — informarsi sulla differenza Value vs Enhanced Value (revisione settoriale), video: https://www.youtube.com/watch?v=u8sszjd2uH8"
+        note: "Value — informarsi sulla differenza Value vs Enhanced Value (revisione settoriale), video: https://www.youtube.com/watch?v=u8sszjd2uH8 (Xetra: IS3S)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BP3QZB59"
       - nome: "iShares Edge MSCI World Minimum Volatility UCITS ETF USD (Acc)"
         isin: IE00B8FHGS14
+        ticker: MVOL
+        ter: 0.30
         label: [azionario, world, min-volatility]
-        note: "Minimum volatility"
+        note: "Minimum volatility (Xetra: IQQ0)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00B8FHGS14"
       - nome: "iShares Edge MSCI World Momentum Factor UCITS ETF (Acc)"
         isin: IE00BP3QZ825
+        ticker: IWMO
+        ter: 0.25
         label: [azionario, world, momentum]
-        note: "Momentum"
+        note: "Momentum (Xetra: IS3R)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BP3QZ825"
+      - nome: "Amundi Russell 1000 Growth UCITS ETF Acc"
+        isin: IE0005E8B9S4
+        ticker: MWOW
+        ter: 0.19
+        label: [azionario, usa, growth]
+        note: "Di fatto l'unico UCITS growth classico (large cap growth USA); molto concentrato su tech (~54%). Ex MSCI World Growth: storico pre-2023 non comparabile"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE0005E8B9S4"
+      - nome: "Xtrackers MSCI World Value UCITS ETF 1C"
+        isin: IE00BL25JM42
+        ticker: XDEV
+        ter: 0.25
+        label: [azionario, world, value]
+        note: "Stesso indice dell'iShares IWVL, ma replica fisica totale invece che a campionamento"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BL25JM42"
+      - nome: "iShares Edge MSCI Europe Value Factor UCITS ETF"
+        isin: IE00BQN1K901
+        ticker: IEVL
+        ter: 0.25
+        label: [azionario, europa, value]
+        note: "Value sull'Europa, storicamente più a sconto (Xetra: CEMS)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BQN1K901"
+      - nome: "iShares STOXX World Equity Multifactor UCITS ETF USD (Acc)"
+        isin: IE00BZ0PKT83
+        ticker: IFSW
+        ter: 0.30
+        label: [azionario, world, multifattoriale]
+        note: "Combina value, quality, momentum, low size e low risk in un solo ETF (nel 2024 ha cambiato indice in STOXX)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BZ0PKT83"
+      - nome: "JPMorgan Global Equity Multi-Factor UCITS ETF USD (acc)"
+        isin: IE00BJRCLL96
+        ticker: JPGL
+        ter: 0.19
+        label: [azionario, world, multifattoriale]
+        note: "Multifattoriale globale a basso costo, meno concentrazione USA del MSCI World"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BJRCLL96"
 
   - id: small-cap
     nome: "Small cap"
@@ -652,20 +699,47 @@ categorie:
 
   - id: obbligazionari-a-scadenza
     nome: "ETF obbligazionari a scadenza — spese previste o prevedibili"
-    nota: "ETF obbligazionari a scadenza, governativi europei ad accumulo. Categoria in ampliamento: verifica web in corso."
+    nota: "Si liquidano automaticamente alla scadenza indicata nel nome. Gli Amundi Fixed Maturity (lanciati 05/2025) sono quotati solo su Euronext Parigi e hanno patrimonio ridotto: comprabili dai broker italiani ma con possibile spread ampio. iShares iBonds e Xtrackers Target Maturity sono su Borsa Italiana. Verificati su justETF (luglio 2026)."
     etf:
+      - nome: "iShares iBonds Dec 2026 Term EUR Corporate UCITS ETF EUR (Dist)"
+        isin: IE000SIZJ2B2
+        ticker: IB26
+        ter: 0.12
+        label: [obbligazioni, scadenza, corporate, europa, dividendi]
+        note: "Scadenza dic 2026: orizzonte breve, cedole trimestrali"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE000SIZJ2B2"
       - nome: "iShares iBonds Dec 2027 Term EUR Corporate UCITS ETF EUR (Acc)"
         isin: IE000ZOI8OK5
+        ticker: IB27
+        ter: 0.12
         label: [obbligazioni, scadenza, corporate, europa]
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE000ZOI8OK5"
-      - nome: "Amundi Fixed Maturity 2029 Euro Government Bond Broad UCITS ETF Acc"
-        isin: LU2872291781
-        label: [obbligazioni, scadenza, governativo, europa]
-        justetf: "https://www.justetf.com/en/etf-profile.html?isin=LU2872291781"
       - nome: "Amundi Fixed Maturity 2028 Euro Government Bond Broad UCITS ETF Acc"
         isin: LU2780871310
+        ticker: FM28
+        ter: 0.09
         label: [obbligazioni, scadenza, governativo, europa]
         justetf: "https://www.justetf.com/en/etf-profile.html?isin=LU2780871310"
+      - nome: "Amundi Fixed Maturity 2029 Euro Government Bond Broad UCITS ETF Acc"
+        isin: LU2872291781
+        ticker: FM29
+        ter: 0.09
+        label: [obbligazioni, scadenza, governativo, europa]
+        justetf: "https://www.justetf.com/en/etf-profile.html?isin=LU2872291781"
+      - nome: "iShares iBonds Dec 2029 Term EUR Corporate UCITS ETF EUR (Acc)"
+        isin: IE000SNLFDR7
+        ticker: 29GA
+        ter: 0.12
+        label: [obbligazioni, scadenza, corporate, europa]
+        note: "Corporate 2029 ad accumulazione, complementare al governativo Amundi (Xetra: I0C0)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE000SNLFDR7"
+      - nome: "Xtrackers II Target Maturity Sept 2031 EUR Corporate Bond UCITS ETF 1C"
+        isin: LU2673523135
+        ticker: XM31
+        ter: 0.12
+        label: [obbligazioni, scadenza, corporate, europa]
+        note: "Scadenza più lunga della gamma (set 2031); fondo ancora piccolo, occhio a spread e liquidità"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU2673523135"
 
   - id: oro
     nome: "ETC oro"
@@ -787,6 +861,79 @@ categorie:
         note: "ETN collateralizzato (non UCITS), 3x daily: estremamente volatile (Xetra: 3QQQ)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BLRPRL42"
 
+  - id: crypto
+    nome: "Crypto (ETP / ETN)"
+    nota: "ATTENZIONE: gli ETP crypto NON sono fondi UCITS ma titoli di debito garantiti da crypto in custodia (rischio emittente/custode, ridotto ma non nullo dal collaterale segregato). Fiscalità italiana diversa dagli ETF: plusvalenze come redditi diversi, quindi compensabili con minusvalenze. Volatilità estrema (drawdown storici oltre l'80%): solo come quota satellite molto piccola (1-5%). A parità di sottostante il TER fa la differenza. Verificati su justETF (luglio 2026)."
+    etf:
+      - nome: "iShares Bitcoin ETP"
+        isin: XS2940466316
+        ticker: IB1T
+        ter: 0.15
+        label: [crypto, etn-etc]
+        note: "L'ETP Bitcoin di BlackRock (2025); TER 0,15% promozionale fino al 31/12/2026, poi 0,25%. Replica fisica"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=XS2940466316"
+      - nome: "CoinShares Physical Bitcoin"
+        isin: GB00BLD4ZL17
+        ticker: BITC
+        ter: 0.15
+        label: [crypto, etn-etc]
+        note: "Tra i più economici (0,15%) e grandi (>1,1 mld); replica fisica"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=GB00BLD4ZL17"
+      - nome: "Bitwise Physical Bitcoin ETP (ex ETC Group)"
+        isin: DE000A27Z304
+        ticker: BTCE
+        ter: 2.00
+        label: [crypto, etn-etc]
+        note: "Il più scambiato in Europa, su Borsa Italiana; TER alto (2%): si paga la liquidità"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=DE000A27Z304"
+      - nome: "VanEck Bitcoin ETN"
+        isin: DE000A28M8D0
+        ticker: VBTC
+        ter: 1.00
+        label: [crypto, etn-etc]
+        note: "Replica fisica, emittente tradizionale; TER 1% intermedio"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=DE000A28M8D0"
+      - nome: "VanEck Ethereum ETN"
+        isin: DE000A3GPSP7
+        ticker: VETH
+        ter: 1.00
+        label: [crypto, etn-etc]
+        note: "Esposizione fisica a Ethereum, senza staking"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=DE000A3GPSP7"
+      - nome: "21Shares Ethereum Staking ETP"
+        isin: CH0454664027
+        ticker: ETHA
+        ter: 1.49
+        label: [crypto, etn-etc]
+        note: "ETH fisico con rendimento da staking che compensa in parte il TER; il più vecchio ETP Ethereum in Europa (2019)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=CH0454664027"
+
+  - id: managed-futures
+    nome: "Managed futures"
+    nota: "Offerta UCITS quasi inesistente: l'unico emittente con veri ETF managed futures comprabili in UE è iMGP/DBi (dal marzo 2025, TER 0,75%). Nessuno è quotato su Borsa Italiana: serve un broker con accesso a Xetra, Euronext Parigi o LSE. Gli ETF USA di riferimento (DBMF, KMLM, CTA) non sono comprabili dal retail UE per mancanza di KID PRIIPs. Alternative in formato fondo UCITS non-ETF: AQR Managed Futures, Man AHL Trend, Winton Trend. Verificati su justETF (luglio 2026)."
+    etf:
+      - nome: "iMGP DBi Managed Futures Fund R USD UCITS ETF"
+        isin: LU2951555585
+        ticker: DBMF
+        ter: 0.75
+        label: [managed-futures, attivo, multi-asset]
+        note: "Primo e finora unico UCITS ETF managed futures in Europa; replica un paniere di grandi CTA via futures su azioni, bond, valute e commodities (Xetra: DBMF, non su Borsa Italiana)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU2951555585"
+      - nome: "iMGP DBi Managed Futures Fund R EUR UCITS ETF"
+        isin: LU2951555403
+        ticker: DBMFE
+        ter: 0.75
+        label: [managed-futures, attivo, multi-asset]
+        note: "Classe in EUR (non a copertura valutaria); quotata solo su Euronext Parigi"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU2951555403"
+      - nome: "iMGP DBi Managed Futures ex-Commodities Fund R USD UCITS ETF"
+        isin: LU3024069877
+        ticker: MFA8
+        ter: 0.75
+        label: [managed-futures, attivo, multi-asset]
+        note: "Esclude i futures su materie prime (solo azioni e bond); per chi ha già esposizione alle commodities (Euronext Parigi)"
+        justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU3024069877"
+
   - id: quantistici
     nome: "ETF quantistici termogravitonici cibernetici"
     nota: "Il nome della categoria è uno scherzo del gruppo: strumenti esotici, da capire bene prima di toccarli. Video: https://www.youtube.com/watch?v=XMt1EKLE9Xk"
@@ -796,14 +943,10 @@ categorie:
         label: [azionario, usa, settoriale, value]
         note: "Settori S&P con CAPE più basso"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU1079841513"
-      - nome: "JPMorgan Global Equity Multi-Factor UCITS ETF Accumulating"
-        isin: IE00BJRCLL96
-        label: [azionario, world, multifattoriale]
-        justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BJRCLL96"
       - nome: "WisdomTree Global Efficient Core UCITS ETF USD Unhedged Acc"
         isin: IE00077IIPQ8
         label: [multi-asset, leva]
-        note: "90/60 azioni-obbligazioni tramite futures"
+        note: "90/60 azioni-obbligazioni tramite futures. Il JPMorgan Global Equity Multi-Factor è ora nella categoria Smart beta"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00077IIPQ8"
 
   - id: compensazione-minusvalenze
