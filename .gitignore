@@ -2,6 +2,10 @@
 paper/files/
 notion_investiamo_pagio.zip
 drive-locale/
+fonti_offline/
+# Rete di sicurezza: qualunque zip o pdf sparso nel repo non finisce online
+*.zip
+*.pdf
 
 # Build e dipendenze
 node_modules/
