@@ -72,6 +72,11 @@ def main() -> None:
     eurusd = scarica(CAMBIO, offline)
     prezzi = prezzi_usd.div(eurusd, axis=0)
     prezzi = prezzi.resample("ME").last().dropna()
+    # Scarta l'ultimo mese se non è ancora chiuso (il resample lo etichetta a
+    # fine mese ma contiene solo i primi giorni): eviterebbe di sporcare
+    # volatilità e peggior anno con un mese parziale.
+    if prezzi.index[-1] > pd.Timestamp.today().normalize():
+        prezzi = prezzi.iloc[:-1]
     if len(prezzi) < 36:
         sys.exit(f"ERRORE: finestra comune troppo corta ({len(prezzi)} mesi)")
 

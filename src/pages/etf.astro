@@ -18,8 +18,8 @@ const fmtTer = (t?: number) => (t == null ? '—' : t.toLocaleString('it-IT', { 
 
     <div class="filtri" role="group" aria-label="Filtra per caratteristica">
       <input id="cerca-etf" type="search" placeholder="Cerca nome, ISIN o ticker…" />
-      <button class="filtro attivo" data-label="tutte">tutte</button>
-      {tutteLeLabel.map((l) => <button class="filtro" data-label={l}>{l}</button>)}
+      <button class="filtro attivo" data-label="tutte" aria-pressed="true">tutte</button>
+      {tutteLeLabel.map((l) => <button class="filtro" data-label={l} aria-pressed="false">{l}</button>)}
     </div>
 
     {catalogo.categorie.map((cat) => (
@@ -36,7 +36,7 @@ const fmtTer = (t?: number) => (t == null ? '—' : t.toLocaleString('it-IT', { 
               {cat.etf.map((e) => (
                 <tr data-label={e.label.join(' ')} data-cerca={`${e.nome} ${e.isin} ${e.ticker ?? ''}`.toLowerCase()}>
                   <td>{e.nome}</td>
-                  <td class="mono">{e.isin} <button class="copia" data-isin={e.isin} title={`Copia ${e.isin}`}>⧉</button></td>
+                  <td class="mono">{e.isin} <button class="copia" data-isin={e.isin} title={`Copia ${e.isin}`} aria-label={`Copia ISIN ${e.isin}`}>⧉</button></td>
                   <td class="mono">{e.ticker ?? ''}</td>
                   <td class="num">{fmtTer(e.ter)}</td>
                   <td>{e.label.map((l) => <span class="badge">{l}</span>)}</td>
@@ -105,8 +105,9 @@ const fmtTer = (t?: number) => (t == null ? '—' : t.toLocaleString('it-IT', { 
 
   bottoni.forEach((b) =>
     b.addEventListener('click', () => {
-      bottoni.forEach((x) => x.classList.remove('attivo'));
+      bottoni.forEach((x) => { x.classList.remove('attivo'); x.setAttribute('aria-pressed', 'false'); });
       b.classList.add('attivo');
+      b.setAttribute('aria-pressed', 'true');
       labelAttiva = b.dataset.label ?? 'tutte';
       applica();
     }),

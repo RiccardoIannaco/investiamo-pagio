@@ -7,7 +7,7 @@ import { href } from '../lib/percorsi';
 const fonti = await getCollection('fonti');
 const articoli = await getCollection('articoli', (a) => !a.data.bozza);
 
-type Voce = { data: Date; tipo: string; titolo: string; url: string };
+type Voce = { data: Date; tipo: string; titolo: string; url: string; esterno: boolean };
 const ultime: Voce[] = [
   ...fonti
     .filter((f) => f.data.aggiunta)
@@ -16,12 +16,14 @@ const ultime: Voce[] = [
       tipo: f.data.tipo,
       titolo: f.data.titolo,
       url: f.data.stato === 'solo-link' ? f.data.link : href(`/fonti/${f.id}`),
+      esterno: f.data.stato === 'solo-link',
     })),
   ...articoli.map((a) => ({
     data: a.data.data,
     tipo: 'articolo',
     titolo: a.data.titolo,
     url: href(`/articoli/${a.id}`),
+    esterno: false,
   })),
 ]
   .sort((a, b) => b.data.getTime() - a.data.getTime())
@@ -59,7 +61,7 @@ const sezioni = [
       <li>
         <span class="data">{v.data.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
         <BadgeTipo tipo={v.tipo} />
-        <a href={v.url}>{v.titolo}</a>
+        <a href={v.url} rel={v.esterno ? 'noopener' : undefined}>{v.titolo}{v.esterno && <>&thinsp;↗</>}</a>
       </li>
     ))}
   </ul>

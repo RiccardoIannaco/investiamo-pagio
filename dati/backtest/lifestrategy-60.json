@@ -1,10 +1,10 @@
 {
  "portafoglio": "lifestrategy-60",
- "aggiornato": "2026-07-05",
+ "aggiornato": "2026-07-10",
  "valuta": "EUR",
  "finestra": [
   "2008-06",
-  "2026-07"
+  "2026-06"
  ],
  "serie": [
   [
@@ -874,15 +874,11 @@
   [
    "2026-06",
    45868.02
-  ],
-  [
-   "2026-07",
-   45640.43
   ]
  ],
  "metriche": {
-  "cagr": 0.0876,
-  "volatilita": 0.091,
+  "cagr": 0.0883,
+  "volatilita": 0.0912,
   "max_drawdown": -0.1347,
   "peggior_anno": -0.1149
  }

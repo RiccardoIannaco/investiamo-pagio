@@ -19,8 +19,8 @@ const tipi = ['video', 'podcast', 'libro', 'paper', 'corso', 'sito'];
   </p>
 
   <div class="filtri" role="group" aria-label="Filtra per tipo">
-    <button class="filtro attivo" data-tipo="tutti">tutte</button>
-    {tipi.map((t) => <button class="filtro" data-tipo={t}>{t}</button>)}
+    <button class="filtro attivo" data-tipo="tutti" aria-pressed="true">tutte</button>
+    {tipi.map((t) => <button class="filtro" data-tipo={t} aria-pressed="false">{t}</button>)}
   </div>
 
   <ul class="elenco-fonti">
@@ -64,8 +64,9 @@ const tipi = ['video', 'podcast', 'libro', 'paper', 'corso', 'sito'];
   const voci = document.querySelectorAll<HTMLLIElement>('.elenco-fonti li');
   bottoni.forEach((b) =>
     b.addEventListener('click', () => {
-      bottoni.forEach((x) => x.classList.remove('attivo'));
+      bottoni.forEach((x) => { x.classList.remove('attivo'); x.setAttribute('aria-pressed', 'false'); });
       b.classList.add('attivo');
+      b.setAttribute('aria-pressed', 'true');
       const tipo = b.dataset.tipo;
       voci.forEach((v) => v.classList.toggle('nascosta', tipo !== 'tutti' && v.dataset.tipo !== tipo));
     }),
