@@ -1,10 +1,10 @@
-# Backtest — come rigenerare i dati
+# Backtest: come rigenerare i dati
 
 Chiunque del gruppo può aggiornare i numeri della dashboard:
 
 1. `pip install -r backtest/requirements.txt` (una volta sola)
 2. `python backtest/run_backtest.py` (dalla radice del repo)
-3. commit di `backtest/dati_grezzi/` e `dati/backtest/` — al push il sito si aggiorna
+3. commit di `backtest/dati_grezzi/` e `dati/backtest/`; al push il sito si aggiorna
 
 `--offline` ricalcola senza scaricare (usa i CSV committati).
 

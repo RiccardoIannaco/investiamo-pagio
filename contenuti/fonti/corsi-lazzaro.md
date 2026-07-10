@@ -1,5 +1,5 @@
 ---
-titolo: "Accumulare Capitale & Rendite da Capitale — videocorsi"
+titolo: "Accumulare Capitale & Rendite da Capitale: videocorsi"
 tipo: corso
 autore: "Alessandro Lazzaro"
 link: "https://drive.google.com/drive/folders/1lNkIypkalgsy-Jz9Ax0dXCQYruIqw7Bc?usp=sharing"

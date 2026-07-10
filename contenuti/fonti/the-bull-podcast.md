@@ -1,5 +1,5 @@
 ---
-titolo: "The Bull — podcast settimanale"
+titolo: "The Bull: podcast settimanale"
 tipo: podcast
 autore: "Riccardo Spada"
 link: "https://open.spotify.com/show/2cQw8L6e7XXA90K1LpZekV"

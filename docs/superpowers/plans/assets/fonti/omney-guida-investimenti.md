@@ -1,5 +1,5 @@
 ---
-titolo: "Omney — La guida definitiva sugli investimenti"
+titolo: "Omney: la guida definitiva sugli investimenti"
 tipo: libro
 autore: "Omney"
 link: "https://drive.google.com/drive/folders/17sqtrCNK_77Ly66FlQnzW0uolKYPNtNI?usp=sharing"

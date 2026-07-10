@@ -9,9 +9,9 @@ Pages, contenuti in markdown.
 
 ## Per chi sviluppa
 
-- `npm install && npm run dev` — sviluppo locale (http://localhost:4321/investiamo-pagio)
-- `npm run build` — build completa con indice di ricerca
-- `python backtest/run_backtest.py` — rigenera i dati della dashboard
+- `npm install && npm run dev`: sviluppo locale (http://localhost:4321/investiamo-pagio)
+- `npm run build`: build completa con indice di ricerca
+- `python backtest/run_backtest.py`: rigenera i dati della dashboard
   (vedi [backtest/README.md](backtest/README.md))
 - Identità visiva e mappa del progetto: [DESIGN.md](DESIGN.md)
 - Guida per LLM: [CLAUDE.md](CLAUDE.md) · Spec e piani: `docs/superpowers/`

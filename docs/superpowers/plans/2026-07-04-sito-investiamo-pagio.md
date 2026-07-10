@@ -1,4 +1,4 @@
-﻿# Sito Investiamo Pagio — Implementation Plan
+﻿# Sito Investiamo Pagio: implementation plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -63,7 +63,7 @@
 - Create: `astro.config.mjs`
 - Create: `tsconfig.json`
 - Create: `src/pages/index.astro` (segnaposto, sostituito nel Task 8)
-- Modify: `.gitignore` (aggiunge artefatti Node/Astro se mancanti — già presenti: verifica soltanto)
+- Modify: `.gitignore` (aggiunge artefatti Node/Astro se mancanti; già presenti: verifica soltanto)
 
 **Interfaces:**
 - Consumes: niente (primo task).
@@ -72,7 +72,7 @@
 - [ ] **Step 1: Verifica che la build fallisca (niente scaffold)**
 
 Run: `npm run build`
-Expected: errore `Could not read package.json` (o simile) — conferma che si parte da zero.
+Expected: errore `Could not read package.json` (o simile): conferma che si parte da zero.
 
 - [ ] **Step 2: Crea il branch e i file di scaffold**
 
@@ -139,7 +139,7 @@ export default defineConfig({
 <!doctype html>
 <html lang="it">
   <head><meta charset="utf-8" /><title>Investiamo Pagio</title></head>
-  <body><p>Investiamo Pagio — in costruzione.</p></body>
+  <body><p>Investiamo Pagio, in costruzione.</p></body>
 </html>
 ```
 
@@ -162,7 +162,7 @@ git merge --no-ff feat/scaffold-astro -m "merge: feat/scaffold-astro"
 
 ---
 
-### Task 2: Design base — token, layout, header, tema
+### Task 2: Design base (token, layout, header, tema)
 
 **Branch:** `feat/design-base`
 
@@ -175,7 +175,7 @@ git merge --no-ff feat/scaffold-astro -m "merge: feat/scaffold-astro"
 **Interfaces:**
 - Consumes: scaffold del Task 1.
 - Produces:
-  - `href(percorso: string): string` da `src/lib/percorsi.ts` — antepone il base path; TUTTI i link interni dei task successivi lo usano.
+  - `href(percorso: string): string` da `src/lib/percorsi.ts`: antepone il base path; TUTTI i link interni dei task successivi lo usano.
   - `Base.astro` con props `{ titolo: string; descrizione?: string }` e uno `<slot />` dentro `<main class="colonna">`; chi ha bisogno della colonna larga usa `<main>` di default e aggiunge la classe `colonna-larga` a un proprio contenitore.
   - Classi CSS globali usate dai task successivi: `colonna`, `colonna-larga`, `kicker`, `badge`, `scorri`, `num`, `muted`, `hairline-top`, `indice`, `meta-riga`.
 
@@ -464,7 +464,7 @@ const lavagna = defineCollection({
 export const collections = { fonti, articoli, lavagna };
 ```
 
-- [ ] **Step 3: Test negativo — un frontmatter sbagliato DEVE far fallire la build**
+- [ ] **Step 3: Test negativo, un frontmatter sbagliato DEVE far fallire la build**
 
 Crea `contenuti/fonti/prova-rotta.md`:
 
@@ -534,7 +534,7 @@ link con [testo](https://...).
 - [ ] **Step 6: Builda di nuovo (i template NON devono entrare nelle collezioni)**
 
 Run: `npm run build`
-Expected: PASS — `template/` non è dentro `contenuti/`, quindi il loader non lo tocca.
+Expected: PASS. `template/` non è dentro `contenuti/`, quindi il loader non lo tocca.
 
 - [ ] **Step 7: Micro-commit e merge**
 
@@ -547,7 +547,7 @@ git merge --no-ff feat/collezioni-contenuti -m "merge: feat/collezioni-contenuti
 
 ---
 
-### Task 4: Fonti — migrazione, paper da BibTeX, catalogo e pagine
+### Task 4: Fonti (migrazione, paper da BibTeX, catalogo e pagine)
 
 **Branch:** `feat/fonti`
 
@@ -609,7 +609,7 @@ for chiave, corpo in voci:
     url = pulisci(campi.get("url", ""))
     rivista = pulisci(campi.get("journal", campi.get("publisher", "")))
     slug = chiave.strip().replace("_", "-").lower()
-    dove = f" — *{rivista}*" if rivista else ""
+    dove = f", pubblicato su *{rivista}*" if rivista else ""
     scheda = "\n".join(
         [
             "---",
@@ -674,7 +674,7 @@ const tipi = ['video', 'podcast', 'libro', 'paper', 'corso', 'sito'];
   <p class="kicker">Catalogo</p>
   <h1>Fonti</h1>
   <p class="muted">
-    Ogni fonte ha una scheda: prima solo il link, poi — quando qualcuno la lavora — il riassunto
+    Ogni fonte ha una scheda: prima solo il link, poi, quando qualcuno la lavora, il riassunto
     con i concetti da portarsi a casa. Vuoi aggiungerne una?
     <a href={href('/come-contribuire')}>Si fa in due minuti</a>.
   </p>
@@ -694,7 +694,7 @@ const tipi = ['video', 'podcast', 'libro', 'paper', 'corso', 'sito'];
           ) : (
             <a href={href(`/fonti/${f.id}`)}>{f.data.titolo}</a>
           )}
-          {f.data.autore && <span class="muted"> — {f.data.autore}</span>}
+          {f.data.autore && <span class="muted"> · {f.data.autore}</span>}
           {f.data.stato === 'riassunto' && <span class="badge stato">riassunto</span>}
           {f.data.stato === 'in-lavorazione' && <span class="badge stato">in lavorazione</span>}
         </span>
@@ -769,7 +769,7 @@ const { Content } = await render(fonte);
 - [ ] **Step 7: Builda, verifica visivamente, micro-commit e merge**
 
 Run: `npm run build`
-Expected: PASS; nel log compaiono le route `/fonti` e le pagine delle fonti con stato ≠ solo-link (al momento 0 o poche: le schede migrate sono quasi tutte solo-link — la pagina [slug] esiste per quando arriveranno i riassunti).
+Expected: PASS; nel log compaiono le route `/fonti` e le pagine delle fonti con stato ≠ solo-link (al momento 0 o poche: le schede migrate sono quasi tutte solo-link; la pagina [slug] esiste per quando arriveranno i riassunti).
 
 Screenshot (entrambi i temi, vedi `DESIGN.md`) della pagina `/investiamo-pagio/fonti/`: filtri in alto, elenco con badge. GUARDA il risultato.
 
@@ -858,7 +858,7 @@ import { caricaEtf } from '../lib/dati';
 
 const catalogo = caricaEtf();
 const tutteLeLabel = [...new Set(catalogo.categorie.flatMap((c) => c.etf.flatMap((e) => e.label)))].sort();
-const fmtTer = (t?: number) => (t == null ? '—' : t.toLocaleString('it-IT', { minimumFractionDigits: 2 }) + '%');
+const fmtTer = (t?: number) => (t == null ? 'n.d.' : t.toLocaleString('it-IT', { minimumFractionDigits: 2 }) + '%');
 ---
 <Base titolo="ETF selezionati" descrizione="Il catalogo curato dal gruppo: ISIN, TER e note pratiche.">
   <div class="colonna-larga">
@@ -1105,7 +1105,7 @@ def test_simula_ribilanciamento_cambia_il_risultato():
 - [ ] **Step 3: Verifica che i test falliscano**
 
 Run: `python -m pytest backtest/tests -q`
-Expected: FAIL — `ModuleNotFoundError: No module named 'metriche'`.
+Expected: FAIL. `ModuleNotFoundError: No module named 'metriche'`.
 
 - [ ] **Step 4: Implementa le metriche**
 
@@ -1295,13 +1295,13 @@ Verifica file: `Get-ChildItem dati/backtest` → 4 JSON; `Get-ChildItem backtest
 `backtest/README.md`:
 
 ```markdown
-# Backtest — come rigenerare i dati
+# Backtest: come rigenerare i dati
 
 Chiunque del gruppo può aggiornare i numeri della dashboard:
 
 1. `pip install -r backtest/requirements.txt` (una volta sola)
 2. `python backtest/run_backtest.py` (dalla radice del repo)
-3. commit di `backtest/dati_grezzi/` e `dati/backtest/` — al push il sito si aggiorna
+3. commit di `backtest/dati_grezzi/` e `dati/backtest/`; al push il sito si aggiorna
 
 `--offline` ricalcola senza scaricare (usa i CSV committati).
 
@@ -1345,7 +1345,7 @@ git merge --no-ff feat/backtest-python -m "merge: feat/backtest-python"
 - Produces:
   - in `src/lib/dati.ts`: `caricaPortafogli(): DatiPortafoglio[]` e `caricaBacktest(slug: string): DatiBacktest | null` (tipi sotto);
   - in `src/lib/formato.ts`: `pct(v: number): string` (0.067 → "6,7%"), `dataIt(iso: string): string`;
-  - `GraficoLinee.astro` con props `{ serie: { nome: string; colore: string; punti: [string, number][] }[] }` — riusabile per altri grafici.
+  - `GraficoLinee.astro` con props `{ serie: { nome: string; colore: string; punti: [string, number][] }[] }`, riusabile per altri grafici.
 
 - [ ] **Step 1: Crea il branch ed estendi il loader**
 
@@ -1505,7 +1505,7 @@ const finestra = conDati[0]?.bt.finestra;
     <p class="kicker">Dashboard</p>
     <h1>Portafogli a confronto</h1>
     <p class="muted">
-      Crescita di 10.000&thinsp;€ — {finestra?.[0]} → {finestra?.[1]}, scala logaritmica,
+      Crescita di 10.000&thinsp;€ dal {finestra?.[0]} al {finestra?.[1]}, scala logaritmica,
       ribilanciamento annuale. Backtest nostri: <a href={href('/portafogli') + '#metodo'}>metodo e limiti</a> sotto.
     </p>
 
@@ -1551,7 +1551,7 @@ const finestra = conDati[0]?.bt.finestra;
 <style>
   .pannello { border: 1px solid var(--hairline); border-radius: 4px; padding: 1.2rem; background: var(--bg-raise); margin: 1.4rem 0; }
   .legenda { display: flex; gap: 1.4rem; flex-wrap: wrap; font-size: .8rem; color: var(--muted); margin-top: .8rem; }
-  .legenda span::before { content: '—'; font-weight: 700; margin-right: .35rem; color: var(--c); }
+  .legenda span::before { content: '■'; margin-right: .4rem; color: var(--c); }
   .num-h { text-align: right; }
   .mono-piccolo { font-family: var(--mono); font-size: .74rem; color: var(--muted); }
 </style>
@@ -1638,7 +1638,7 @@ git merge --no-ff feat/portafogli-dashboard -m "merge: feat/portafogli-dashboard
 
 ---
 
-### Task 8: Pagine statiche — home, inizia qui, strumenti, lavagna, 404
+### Task 8: Pagine statiche (home, inizia qui, strumenti, lavagna, 404)
 
 **Branch:** `feat/pagine-statiche`
 
@@ -1720,7 +1720,7 @@ const ultime: Voce[] = [
 
 const sezioni = [
   ['Inizia qui', '/inizia-qui', 'Il percorso consigliato se parti da zero'],
-  ['Fonti', '/fonti', 'Video, podcast, libri e paper — con i concetti da portarsi a casa'],
+  ['Fonti', '/fonti', 'Video, podcast, libri e paper, con i concetti da portarsi a casa'],
   ['ETF', '/etf', 'La lista curata, con ISIN, TER e note pratiche'],
   ['Portafogli', '/portafogli', 'Lazy portfolio a confronto, coi nostri backtest'],
   ['Strumenti', '/strumenti', 'Fogli, calcolatori, siti di comparazione, script'],
@@ -1782,7 +1782,7 @@ import { href } from '../lib/percorsi';
   </p>
   <ol class="indice">
     <li><span class="nome">Le basi</span><span class="descr">Il videocorso <a href={href('/fonti')}>Educati e Finanziati</a> di Paolo Coletti: gratuito, sistematico, accademico ma comprensibile. Guarda almeno le prime lezioni prima di aprire qualunque conto.</span></li>
-    <li><span class="nome">La pratica</span><span class="descr">La playlist <a href={href('/fonti')}>Guida Pratica di The Bull</a>: broker, ordini, piani di accumulo — le cose operative.</span></li>
+    <li><span class="nome">La pratica</span><span class="descr">La playlist <a href={href('/fonti')}>Guida Pratica di The Bull</a>: broker, ordini, piani di accumulo, le cose operative.</span></li>
     <li><span class="nome">L'abitudine</span><span class="descr">Il <a href={href('/fonti')}>podcast di The Bull</a> ogni settimana, partendo dalla selezione del gruppo. La finanza personale si impara per sedimentazione.</span></li>
     <li><span class="nome">Gli strumenti</span><span class="descr">Il <a href={href('/etf')}>catalogo ETF</a> per capire cosa compra la gente come noi, e perché domicilio e TER contano.</span></li>
     <li><span class="nome">Il portafoglio</span><span class="descr">I <a href={href('/portafogli')}>portafogli modello</a> a confronto: non per copiare, ma per capire i compromessi rendimento/volatilità.</span></li>
@@ -1814,7 +1814,7 @@ const gruppi = caricaStrumenti();
         {g.strumenti.map((s) => (
           <li>
             <a href={s.url} rel="noopener">{s.nome}&thinsp;↗</a>
-            <span class="muted"> — {s.descrizione}</span>
+            <span class="muted"> · {s.descrizione}</span>
           </li>
         ))}
       </ul>
@@ -1907,7 +1907,7 @@ git merge --no-ff feat/pagine-statiche -m "merge: feat/pagine-statiche"
 
 **Interfaces:**
 - Consumes: collezione `articoli` (Task 3), `Base.astro`, `href()`.
-- Produces: route `/articoli` e `/articoli/<id>`; la home (Task 8) già linka `/articoli/${a.id}` — gli id sono i nomi file senza estensione.
+- Produces: route `/articoli` e `/articoli/<id>`; la home (Task 8) già linka `/articoli/${a.id}`; gli id sono i nomi file senza estensione.
 
 - [ ] **Step 1: Crea il branch e copia il primo articolo**
 
@@ -1943,7 +1943,7 @@ const articoli = (await getCollection('articoli', (a) => !a.data.bozza)).sort(
         <span class="data">{a.data.data.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
         <span>
           <a href={href(`/articoli/${a.id}`)}>{a.data.titolo}</a>
-          <span class="muted"> — {a.data.autore}</span>
+          <span class="muted"> · {a.data.autore}</span>
         </span>
       </li>
     ))}
@@ -2278,9 +2278,9 @@ Pages, contenuti in markdown.
 
 ## Per chi sviluppa
 
-- `npm install && npm run dev` — sviluppo locale (http://localhost:4321/investiamo-pagio)
-- `npm run build` — build completa con indice di ricerca
-- `python backtest/run_backtest.py` — rigenera i dati della dashboard
+- `npm install && npm run dev`: sviluppo locale (http://localhost:4321/investiamo-pagio)
+- `npm run build`: build completa con indice di ricerca
+- `python backtest/run_backtest.py`: rigenera i dati della dashboard
   (vedi [backtest/README.md](backtest/README.md))
 - Identità visiva e mappa del progetto: [DESIGN.md](DESIGN.md)
 - Spec e piani: `docs/superpowers/`

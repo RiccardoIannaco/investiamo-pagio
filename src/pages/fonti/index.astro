@@ -13,7 +13,7 @@ const tipi = ['video', 'podcast', 'libro', 'paper', 'corso', 'sito'];
   <p class="kicker">Catalogo</p>
   <h1>Fonti</h1>
   <p class="muted">
-    Ogni fonte ha una scheda: prima solo il link, poi — quando qualcuno la lavora — il riassunto
+    Ogni fonte ha una scheda: prima solo il link, poi, quando qualcuno la lavora, il riassunto
     con i concetti da portarsi a casa. Vuoi aggiungerne una?
     <a href={href('/come-contribuire')}>Si fa in due minuti</a>.
   </p>
@@ -33,7 +33,7 @@ const tipi = ['video', 'podcast', 'libro', 'paper', 'corso', 'sito'];
           ) : (
             <a href={href(`/fonti/${f.id}`)}>{f.data.titolo}</a>
           )}
-          {f.data.autore && <span class="muted"> — {f.data.autore}</span>}
+          {f.data.autore && <span class="muted"> · {f.data.autore}</span>}
           {f.data.stato === 'riassunto' && <span class="badge stato">riassunto</span>}
           {f.data.stato === 'in-lavorazione' && <span class="badge stato">in lavorazione</span>}
         </span>

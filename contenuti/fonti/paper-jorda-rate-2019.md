@@ -6,4 +6,4 @@ link: "https://doi.org/10.1093/qje/qjz012"
 stato: solo-link
 tag: [paper]
 ---
-Paper accademico — *The Quarterly Journal of Economics*. Riferimento completo in `paper/paper.bib`; il PDF non è nel repo per copyright: usare il link ufficiale.
+Paper accademico, pubblicato su *The Quarterly Journal of Economics*. Riferimento completo in `paper/paper.bib`; il PDF non è nel repo per copyright: usare il link ufficiale.

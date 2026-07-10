@@ -1,4 +1,4 @@
-# Catalogo ETF selezionati — migrato dal Notion "ETF Selezionati" e ampliato.
+# Catalogo ETF selezionati, migrato dal Notion "ETF Selezionati" e ampliato.
 # TER in percento annuo (0.19 = 0,19%), verificati su justETF dove indicato
 # nelle note di categoria; prima di comprare verificare SEMPRE su JustETF.
 # Ticker = Borsa Italiana dove noto (Xetra nelle note quando diverso).
@@ -342,7 +342,7 @@ categorie:
 
   - id: fattoriali
     nome: "Smart beta (fattoriali)"
-    nota: "Video introduttivo ai fattoriali: https://www.youtube.com/watch?v=E_gBLbxBcXM — offerta UCITS growth molto limitata (l'Amundi Russell 1000 Growth è di fatto l'unico). Attenzione ai rebranding recenti. Verificati su justETF (luglio 2026)."
+    nota: "Video introduttivo ai fattoriali: https://www.youtube.com/watch?v=E_gBLbxBcXM. L'offerta UCITS growth è molto limitata (l'Amundi Russell 1000 Growth è di fatto l'unico). Attenzione ai rebranding recenti. Verificati su justETF (luglio 2026)."
     video: "https://www.youtube.com/watch?v=E_gBLbxBcXM"
     etf:
       - nome: "iShares Edge MSCI World Quality Factor UCITS ETF (Acc)"
@@ -371,7 +371,7 @@ categorie:
         ticker: IWVL
         ter: 0.25
         label: [azionario, world, value]
-        note: "Value — informarsi sulla differenza Value vs Enhanced Value (revisione settoriale), video: https://www.youtube.com/watch?v=u8sszjd2uH8 (Xetra: IS3S)"
+        note: "Value; informarsi sulla differenza Value vs Enhanced Value (revisione settoriale), video: https://www.youtube.com/watch?v=u8sszjd2uH8 (Xetra: IS3S)"
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BP3QZB59"
       - nome: "iShares Edge MSCI World Minimum Volatility UCITS ETF USD (Acc)"
         isin: IE00B8FHGS14
@@ -530,8 +530,8 @@ categorie:
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE0003UVYC20"
 
   - id: golden-butterfly-usa
-    nome: "Lazy portfolio — Golden Butterfly (versione USA, non adattata)"
-    nota: "Composizione originale non adattata per investitori europei; video: https://www.youtube.com/watch?v=D0HqEAiQNws — le versioni adattate sono nella sezione Portafogli. La gamba obbligazionaria lunga usa titoli euro 15+ (EM15) invece dei Treasury 20+: adattamento comune per evitare il rischio cambio. Verificati su justETF (luglio 2026)."
+    nome: "Lazy portfolio: Golden Butterfly (versione USA, non adattata)"
+    nota: "Composizione originale non adattata per investitori europei; video: https://www.youtube.com/watch?v=D0HqEAiQNws. Le versioni adattate sono nella sezione Portafogli. La gamba obbligazionaria lunga usa titoli euro 15+ (EM15) invece dei Treasury 20+: adattamento comune per evitare il rischio cambio. Verificati su justETF (luglio 2026)."
     etf:
       - nome: "Xtrackers MSCI USA UCITS ETF 1C"
         isin: IE00BJ0KDR00
@@ -592,7 +592,7 @@ categorie:
 
   - id: obbligazionari
     nome: "ETF obbligazionari"
-    nota: "Gli ETF obbligazionari non garantiscono il capitale: rispecchiano il valore dei bond sul mercato secondario; quando scendono aumenta il rendimento atteso. Il periodo di detenzione appropriato ≈ la durata: un rialzo dei tassi è negativo per chi detiene meno della durata, positivo per chi detiene più a lungo. Approfondimenti: https://www.bogleheads.org/forum/viewtopic.php?t=360575 e https://ofdollarsanddata.com/why-you-dont-lose-money-in-bonds-if-you-wait-long-enough/ — ISIN e TER verificati su justETF (luglio 2026)."
+    nota: "Gli ETF obbligazionari non garantiscono il capitale: rispecchiano il valore dei bond sul mercato secondario; quando scendono aumenta il rendimento atteso. Il periodo di detenzione appropriato ≈ la durata: un rialzo dei tassi è negativo per chi detiene meno della durata, positivo per chi detiene più a lungo. Approfondimenti: https://www.bogleheads.org/forum/viewtopic.php?t=360575 e https://ofdollarsanddata.com/why-you-dont-lose-money-in-bonds-if-you-wait-long-enough/. ISIN e TER verificati su justETF (luglio 2026)."
     etf:
       - nome: "Vanguard EUR Eurozone Government Bond UCITS ETF Accumulating"
         isin: IE00BH04GL39
@@ -666,7 +666,7 @@ categorie:
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=IE00BF1QPL78"
 
   - id: monetari
-    nome: "ETF monetari — fondo d'emergenza"
+    nome: "ETF monetari (fondo d'emergenza)"
     nota: "XEON e SMART sono swap su €STR (accumulazione); IEGE e PRAB sono a replica fisica su titoli di Stato euro 0-12 mesi. Verificati su justETF (luglio 2026)."
     etf:
       - nome: "Xtrackers II EUR Overnight Rate Swap UCITS ETF 1C"
@@ -698,7 +698,7 @@ categorie:
         justetf: "https://www.justetf.com/it/etf-profile.html?isin=LU2233156582"
 
   - id: obbligazionari-a-scadenza
-    nome: "ETF obbligazionari a scadenza — spese previste o prevedibili"
+    nome: "ETF obbligazionari a scadenza (spese previste o prevedibili)"
     nota: "Si liquidano automaticamente alla scadenza indicata nel nome. Gli Amundi Fixed Maturity (lanciati 05/2025) sono quotati solo su Euronext Parigi e hanno patrimonio ridotto: comprabili dai broker italiani ma con possibile spread ampio. iShares iBonds e Xtrackers Target Maturity sono su Borsa Italiana. Verificati su justETF (luglio 2026)."
     etf:
       - nome: "iShares iBonds Dec 2026 Term EUR Corporate UCITS ETF EUR (Dist)"
@@ -830,7 +830,7 @@ categorie:
 
   - id: leva
     nome: "ETF a leva"
-    nota: "ATTENZIONE: leva con reset giornaliero — il moltiplicatore (2x, 3x) vale solo sul rendimento di UN giorno. Su periodi lunghi il compounding causa 'volatility decay': in mercati laterali la performance può essere molto peggiore di 2x/3x l'indice, anche negativa con indice piatto. Strumenti da trading tattico, non da buy-and-hold né da PAC. I 3x esistono solo come ETN/ETP (i limiti UCITS vietano leva 3x): rischio emittente in più. Verificati su justETF (luglio 2026)."
+    nota: "ATTENZIONE: leva con reset giornaliero. Il moltiplicatore (2x, 3x) vale solo sul rendimento di UN giorno. Su periodi lunghi il compounding causa 'volatility decay': in mercati laterali la performance può essere molto peggiore di 2x/3x l'indice, anche negativa con indice piatto. Strumenti da trading tattico, non da buy-and-hold né da PAC. I 3x esistono solo come ETN/ETP (i limiti UCITS vietano leva 3x): rischio emittente in più. Verificati su justETF (luglio 2026)."
     etf:
       - nome: "Xtrackers S&P 500 2x Leveraged Daily Swap UCITS ETF 1C"
         isin: LU0411078552

@@ -1,4 +1,4 @@
-# DESIGN.md — Identità visiva e mappa del progetto
+# DESIGN.md: identità visiva e mappa del progetto
 
 > **Per LLM e umani che riprendono il lavoro:** questo file è la fonte di verità sul design
 > e su *dove sta cosa e perché*. Aggiornalo ogni volta che una decisione di design cambia.
@@ -23,15 +23,15 @@
 | `docs/superpowers/specs/assets/mockup-investiamo-pagio.html` | Mockup HTML approvato (4 viste: home, scheda fonte, tabella ETF, dashboard) | È il riferimento visivo vincolante: l'implementazione deve somigliare a questo |
 | `IDEE.md` | Idee del gruppo + promemoria materiali da fornire | L'utente lo aggiorna a mano; la futura pagina "Lavagna" lo renderà |
 | `paper/paper.bib` | Bibliografia dei 19 paper accademici | Da qui si generano le schede fonte `tipo: paper` (link DOI/SSRN, MAI i PDF) |
-| `paper/files/` | PDF dei paper — **gitignored** | Copyright degli editori: non devono finire nel repo pubblico |
-| `notion_investiamo_pagio.zip` | Export Notion originale — **gitignored** | Contiene PDF con copyright; è la materia prima della migrazione |
-| `drive-locale/` (futura) | Excel e simulazioni scaricate da Drive — **gitignored** | Materiale privato del gruppo: sul sito solo link Drive |
+| `paper/files/` | PDF dei paper (**gitignored**) | Copyright degli editori: non devono finire nel repo pubblico |
+| `notion_investiamo_pagio.zip` | Export Notion originale (**gitignored**) | Contiene PDF con copyright; è la materia prima della migrazione |
+| `drive-locale/` (futura) | Excel e simulazioni scaricate da Drive (**gitignored**) | Materiale privato del gruppo: sul sito solo link Drive |
 
 La struttura futura del repo (cartelle `contenuti/`, `dati/`, `backtest/`, `src/`, `template/`) è definita nella spec §4. Regola chiave: **le cartelle che toccano i non-programmatori hanno nomi italiani e stanno alla radice**; `src/` è solo per chi sviluppa.
 
 ## Identità visiva ("editoriale / rivista")
 
-Scelta dall'utente tra tre direzioni proposte. Intento: "qui si legge roba seria ma accessibile" — l'opposto del look AI generico (NIENTE gradienti, ombre, card arrotondate ovunque, hero giganti, emoji a pioggia).
+Scelta dall'utente tra tre direzioni proposte. Intento: "qui si legge roba seria ma accessibile", l'opposto del look AI generico (NIENTE gradienti, ombre, card arrotondate ovunque, hero giganti, emoji a pioggia).
 
 ### Token colore
 
@@ -41,7 +41,7 @@ Scelta dall'utente tra tre direzioni proposte. Intento: "qui si legge roba seria
 | `--bg-raise` | `#F4EFE3` | `#201D17` | pannelli (es. riquadro grafico) |
 | `--ink` | `#1E1C17` | `#E8E3D6` | testo |
 | `--muted` | `#6E695D` | `#9B9587` | testo secondario, meta |
-| `--accent` | `#1E5C3F` (verde bottiglia) | `#7FBD98` | link, tag, elementi attivi — **unica tinta di accento** |
+| `--accent` | `#1E5C3F` (verde bottiglia) | `#7FBD98` | link, tag, elementi attivi (**unica tinta di accento**) |
 | `--accent-soft` | `#E3EDE6` | `#22322A` | sfondo dei badge tipo-fonte |
 | `--hairline` | `#E2DCCC` | `#322F27` | righe sottili di tabelle e divisori |
 

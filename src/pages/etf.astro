@@ -4,7 +4,7 @@ import { caricaEtf } from '../lib/dati';
 
 const catalogo = caricaEtf();
 const tutteLeLabel = [...new Set(catalogo.categorie.flatMap((c) => c.etf.flatMap((e) => e.label)))].sort();
-const fmtTer = (t?: number) => (t == null ? '—' : t.toLocaleString('it-IT', { minimumFractionDigits: 2 }) + '%');
+const fmtTer = (t?: number) => (t == null ? 'n.d.' : t.toLocaleString('it-IT', { minimumFractionDigits: 2 }) + '%');
 ---
 <Base titolo="ETF selezionati" descrizione="Il catalogo curato dal gruppo: ISIN, TER e note pratiche.">
   <div class="colonna-larga">

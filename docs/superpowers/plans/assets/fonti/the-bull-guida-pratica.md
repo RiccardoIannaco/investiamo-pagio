@@ -1,5 +1,5 @@
 ---
-titolo: "The Bull — Guida Pratica"
+titolo: "The Bull: Guida Pratica"
 tipo: video
 autore: "Riccardo Spada"
 link: "https://youtube.com/playlist?list=PL9PLR7E2lKYqDEB3UbjgpjUubr8alO5sc&si=njE0Q3Yz_wTm1Umq"

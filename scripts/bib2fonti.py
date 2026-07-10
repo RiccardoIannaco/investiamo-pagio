@@ -31,7 +31,7 @@ for chiave, corpo in voci:
         url = f"https://doi.org/{doi}"
     rivista = pulisci(campi.get("journal", campi.get("publisher", "")))
     slug = chiave.strip().replace("_", "-").lower()
-    dove = f" — *{rivista}*" if rivista else ""
+    dove = f", pubblicato su *{rivista}*" if rivista else ""
     scheda = "\n".join(
         [
             "---",

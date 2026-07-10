@@ -6,4 +6,4 @@ link: "https://doi.org/10.3905/jpm.2014.40.5.075"
 stato: solo-link
 tag: [paper]
 ---
-Paper accademico — *The Journal of Portfolio Management*. Riferimento completo in `paper/paper.bib`; il PDF non è nel repo per copyright: usare il link ufficiale.
+Paper accademico, pubblicato su *The Journal of Portfolio Management*. Riferimento completo in `paper/paper.bib`; il PDF non è nel repo per copyright: usare il link ufficiale.

@@ -6,4 +6,4 @@ link: "https://www.sciencedirect.com/science/article/pii/0304393285900613"
 stato: solo-link
 tag: [paper]
 ---
-Paper accademico — *Journal of Monetary Economics*. Riferimento completo in `paper/paper.bib`; il PDF non è nel repo per copyright: usare il link ufficiale.
+Paper accademico, pubblicato su *Journal of Monetary Economics*. Riferimento completo in `paper/paper.bib`; il PDF non è nel repo per copyright: usare il link ufficiale.
