@@ -1,5 +1,5 @@
 ---
-titolo: "The Bull — FAQ"
+titolo: "The Bull: FAQ"
 tipo: video
 autore: "Riccardo Spada"
 link: "https://youtube.com/playlist?list=PL9PLR7E2lKYpMlpC_xSbU76NDB5Ij3AI0&si=vK3F-qbkaawap_Nu"

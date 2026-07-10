@@ -1,5 +1,5 @@
 ---
-titolo: "Educati e Finanziati — videocorso di finanza personale"
+titolo: "Educati e Finanziati: videocorso di finanza personale"
 tipo: corso
 autore: "Paolo Coletti"
 link: "https://www.youtube.com/playlist?list=PLfuzpc-H8qcdetz_Zwc5ILnbiG6eek_T8"

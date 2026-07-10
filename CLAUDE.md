@@ -1,4 +1,4 @@
-# CLAUDE.md — Investiamo Pagio
+# CLAUDE.md: Investiamo Pagio
 
 > Punto d'ingresso per LLM e umani. Leggilo per intero prima di toccare qualsiasi cosa.
 > **Mantienilo aggiornato**: a ogni milestone aggiorna la sezione "Stato" e, se cambia
@@ -7,7 +7,7 @@
 ## Cos'è questo progetto
 
 Sito statico su GitHub Pages che sostituisce il Notion "Wall Street Hub" di un gruppo di
-amici: second brain di **finanza personale in italiano** — fonti (video/podcast/libri/paper)
+amici: second brain di **finanza personale in italiano**, con fonti (video/podcast/libri/paper)
 con riassunti pratici, catalogo ETF curato con TER e label, portafogli modello con backtest
 Python fatti in casa, strumenti, articoli. I contributor NON sono programmatori: editano
 markdown dalla web UI di GitHub.
@@ -18,12 +18,12 @@ https://claude.ai/code/artifact/cf28bf25-076c-4157-a8d5-e1d4e7571faa
 
 ## Ordine di lettura (obbligatorio prima di implementare)
 
-1. `DESIGN.md` — identità visiva (token colore, tipografia), mappa "dove sta cosa e perché",
+1. `DESIGN.md`: identità visiva (token colore, tipografia), mappa "dove sta cosa e perché",
    convenzioni git, comando per la verifica visiva con screenshot.
-2. `docs/superpowers/specs/2026-07-03-investiamo-pagio-sito-design.md` — la spec approvata.
-3. `docs/superpowers/plans/2026-07-04-sito-investiamo-pagio.md` — il piano: 12 task con
+2. `docs/superpowers/specs/2026-07-03-investiamo-pagio-sito-design.md`: la spec approvata.
+3. `docs/superpowers/plans/2026-07-04-sito-investiamo-pagio.md`: il piano di 12 task con
    codice completo per ogni step. **L'implementazione segue il piano, non l'improvvisazione.**
-4. `.superpowers/sdd/progress.md` — il ledger di avanzamento: i task lì marcati completi
+4. `.superpowers/sdd/progress.md`: il ledger di avanzamento; i task lì marcati completi
    sono FATTI, non ri-eseguirli (fidati del ledger e di `git log`, non della memoria).
 
 ## Stato (aggiornato 2026-07-10, SITO PUBBLICATO E ONLINE)
@@ -47,7 +47,7 @@ da rivedere quando conviene bumpare le versioni delle action / `node-version`.
   TER/ticker/label; aggiunte crypto e managed-futures. Mancano solo i TER di lifestrategy
   e Ossiam CAPE (ricerca interrotta dai limiti).
 - **Review finale whole-branch (Opus)**: verdetto "Sì con fix Important". Fix Important
-  applicato (`fonti_offline/` + `*.zip`/`*.pdf` in `.gitignore` — chiudeva una falla
+  applicato (`fonti_offline/` + `*.zip`/`*.pdf` in `.gitignore`; chiudeva una falla
   anti-copyright: l'utente aveva scaricato lì i videocorsi Lazzaro). Minor applicati:
   guard grafico vuoto, marcatore ↗ sui link esterni in home, `aria-pressed` sui filtri,
   scarto del mese parziale nei backtest.
@@ -92,7 +92,7 @@ template/                              ← template-fonte.md, template-articolo.
 - **Design**: solo i token di `DESIGN.md`; tema chiaro E scuro; niente gradienti/ombre/hero;
   il mockup è il riferimento vincolante. Ogni modifica visiva va GUARDATA via screenshot
   headless in entrambi i temi (comando in DESIGN.md), non solo compilata.
-- **Base path**: il sito vive sotto `/investiamo-pagio` — link interni SOLO via `href()`
+- **Base path**: il sito vive sotto `/investiamo-pagio`; link interni SOLO via `href()`
   di `src/lib/percorsi.ts`.
 - **Lingua**: tutto in italiano (UI, contenuti, commit, note).
 - **Niente consigli d'investimento**: disclaimer visibile sulle pagine dati.
@@ -107,7 +107,7 @@ template/                              ← template-fonte.md, template-articolo.
   registra il commit BASE prima di dispatchare.
 - **Verifica = evidenza**: mai dichiarare "fatto" senza l'output del comando (build, pytest,
   screenshot). Se un test fallisce, riportalo com'è.
-- **Dati fattuali (ISIN, TER)**: mai dalla memoria del modello — verifica su justETF/web;
+- **Dati fattuali (ISIN, TER)**: mai dalla memoria del modello; verifica su justETF/web;
   in `dati/etf.yaml` la data `aggiornato` va tenuta vera.
 - **Windows**: shell PowerShell 5.1 (niente `&&`; vedi note del tool). I path lunghi
   rompono Expand-Archive: usa `tar -xf` verso path corti.

@@ -20,7 +20,7 @@ const articoli = (await getCollection('articoli', (a) => !a.data.bozza)).sort(
         <span class="data">{a.data.data.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
         <span>
           <a href={href(`/articoli/${a.id}`)}>{a.data.titolo}</a>
-          <span class="muted"> — {a.data.autore}</span>
+          <span class="muted"> · {a.data.autore}</span>
         </span>
       </li>
     ))}

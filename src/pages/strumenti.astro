@@ -16,7 +16,7 @@ const gruppi = caricaStrumenti();
         {g.strumenti.map((s) => (
           <li>
             <a href={s.url} rel="noopener">{s.nome}&thinsp;↗</a>
-            <span class="muted"> — {s.descrizione}</span>
+            <span class="muted"> · {s.descrizione}</span>
           </li>
         ))}
       </ul>

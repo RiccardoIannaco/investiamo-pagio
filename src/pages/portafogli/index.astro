@@ -21,7 +21,7 @@ const finestra = conDati[0]?.bt.finestra;
     <p class="kicker">Dashboard</p>
     <h1>Portafogli a confronto</h1>
     <p class="muted">
-      Crescita di 10.000&thinsp;€ — {finestra?.[0]} → {finestra?.[1]}, scala logaritmica,
+      Crescita di 10.000&thinsp;€ dal {finestra?.[0]} al {finestra?.[1]}, scala logaritmica,
       ribilanciamento annuale. Backtest nostri: <a href="#metodo">metodo e limiti</a> sotto.
     </p>
 
@@ -67,7 +67,7 @@ const finestra = conDati[0]?.bt.finestra;
 <style>
   .pannello { border: 1px solid var(--hairline); border-radius: 4px; padding: 1.2rem; background: var(--bg-raise); margin: 1.4rem 0; }
   .legenda { display: flex; gap: 1.4rem; flex-wrap: wrap; font-size: .8rem; color: var(--muted); margin-top: .8rem; }
-  .legenda span::before { content: '—'; font-weight: 700; margin-right: .35rem; color: var(--c); }
+  .legenda span::before { content: '■'; margin-right: .4rem; color: var(--c); }
   .num-h { text-align: right; }
   .mono-piccolo { font-family: var(--mono); font-size: .74rem; color: var(--muted); }
 </style>

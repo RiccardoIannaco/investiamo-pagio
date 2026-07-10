@@ -1,4 +1,4 @@
-# Strumenti — migrato da "HUB utilities" e dalla homepage del Notion
+# Strumenti, migrati da "HUB utilities" e dalla homepage del Notion
 gruppi:
   - id: fogli-del-gruppo
     nome: "Fogli e documenti del gruppo (accesso privato)"
@@ -31,7 +31,7 @@ gruppi:
   - id: analisi-e-backtest
     nome: "Analisi e backtest"
     strumenti:
-      - nome: "Curvo — backtest di portafogli"
+      - nome: "Curvo: backtest di portafogli"
         url: "https://curvo.eu/backtest/it/portafoglio/nuovo"
         descrizione: "Backtest di portafogli ETF UCITS con dati degli indici, in italiano"
       - nome: "Backtest factor analysis (beta)"
@@ -46,7 +46,7 @@ gruppi:
       - nome: "Portfolio Charts"
         url: "https://portfoliocharts.com/"
         descrizione: "Visualizzazioni e metriche di lungo periodo per portafogli modello"
-      - nome: "Research Affiliates — asset allocation interattiva"
+      - nome: "Research Affiliates: asset allocation interattiva"
         url: "https://interactive.researchaffiliates.com/asset-allocation"
         descrizione: "Rendimenti attesi e volatilità per asset class"
       - nome: "Simple Tools for Investors"
@@ -55,7 +55,7 @@ gruppi:
   - id: etf-e-pensione
     nome: "ETF e previdenza"
     strumenti:
-      - nome: "JustETF — guida e screener"
+      - nome: "JustETF: guida e screener"
         url: "https://www.justetf.com/it/how-to/"
         descrizione: "Lo screener di riferimento per gli ETF UCITS e le sue guide introduttive"
       - nome: "Calcolatore fondi pensione (beta)"

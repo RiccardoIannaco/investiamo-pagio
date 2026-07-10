@@ -1,4 +1,4 @@
-# Investiamo Pagio — Design del sito
+# Investiamo Pagio: design del sito
 
 **Data:** 2026-07-03 · **Stato:** approvato dall'utente (mockup incluso)
 
@@ -66,7 +66,7 @@ investiamo-pagio/
 
 ```yaml
 ---
-titolo: "The Bull — podcast settimanale"
+titolo: "The Bull: podcast settimanale"
 tipo: podcast            # video | podcast | libro | paper | corso | sito
 autore: "Riccardo Spada" # opzionale
 link: "https://open.spotify.com/show/..."
@@ -189,13 +189,13 @@ Riferimento: `docs/superpowers/specs/assets/mockup-investiamo-pagio.html` (mocku
 
 ## 10. Testing e qualità
 
-- CI su ogni push/PR: `astro build` — la validazione zod dei frontmatter avviene qui e una build fallita non viene pubblicata.
+- CI su ogni push/PR: `astro build`; la validazione zod dei frontmatter avviene qui e una build fallita non viene pubblicata.
 - `pytest` per `backtest/metriche.py` (stessa CI, job separato che gira solo se cambia `backtest/`).
 - Verifica manuale prima del lancio: navigazione completa, ricerca, dark mode, mobile.
 
 ## 11. Fuori scope v1 (esplicitamente)
 
-- CMS grafico (Pages CMS/Decap) — aggiungibile in seguito sopra lo stesso repo.
+- CMS grafico (Pages CMS/Decap): aggiungibile in seguito sopra lo stesso repo.
 - Commenti, newsletter, analytics, multi-lingua.
 - Trascrizioni automatiche dei video (i riassunti arriveranno come contenuti, non come feature).
 - Backtest con dati ETF reali a livello di NAV o simulazioni fiscali.

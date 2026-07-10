@@ -1,5 +1,5 @@
 ---
-titolo: "Too Big to Fail — podcast"
+titolo: "Too Big to Fail: podcast"
 tipo: podcast
 link: "https://youtube.com/@toobigtofailpodcast?si=OwWKnHd6MXGKnfnD"
 stato: solo-link

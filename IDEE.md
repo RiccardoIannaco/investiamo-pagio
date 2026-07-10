@@ -9,10 +9,10 @@ Raccolta informale di idee man mano che vengono in mente. Aggiungete pure una ri
 
 ## Da fare / valutare
 
-- **Dashboard di confronto portafogli modello** — pagina chiara che confronta i principali lazy portfolio (Golden Butterfly, All Weather, LifeStrategy, 60/40, ecc.) costruiti con ETF reali (ISIN/ticker veri, UCITS).
+- **Dashboard di confronto portafogli modello**: pagina chiara che confronta i principali lazy portfolio (Golden Butterfly, All Weather, LifeStrategy, 60/40, ecc.) costruiti con ETF reali (ISIN/ticker veri, UCITS).
   - Backtest fatti in prima persona con script Python nostri, versionati nel repo.
   - Essendo il sito statico: ogni tanto qualcuno ri-esegue gli script con dati aggiornati e pusha i risultati (grafici/tabelle rigenerati).
-- **Collettore di risorse** — punto unico e comodo per:
+- **Collettore di risorse**: punto unico e comodo per:
   - fogli Excel / Google Sheets (conti correnti, conti deposito, spesometro, patrimonio)
   - script di simulazione (Python)
   - siti di comparazione e backtest (Curvo, JustETF, portfoliocharts, lazyportfolioetf, trackingdifferences, ecc.)
