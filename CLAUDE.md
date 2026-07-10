@@ -38,8 +38,8 @@ da rivedere quando conviene bumpare le versioni delle action / `node-version`.
 
 **Fatto:**
 - Analisi Notion, decisioni, mockup approvato, spec + piano committati.
-- **Sito completo**: 16 pagine buildano (`npm run build`), pytest 6/6, tutte le sezioni
-  attive (home, inizia-qui, fonti con 29 schede, ETF con label/TER, dashboard con backtest
+- **Sito completo**: 17 pagine buildano (`npm run build`), pytest 6/6, tutte le sezioni
+  attive (home, inizia-qui, fonti con 30 schede, ETF con label/TER, dashboard con backtest
   reali 2008-06 → 2026-06, strumenti, articoli, lavagna, cerca, come-contribuire, 404).
   Ledger dettagliato in `.superpowers/sdd/progress.md`.
 - Task 1 con review pulita; Task 2-12 eseguiti inline con build + verifica visiva per ognuno.
@@ -51,6 +51,11 @@ da rivedere quando conviene bumpare le versioni delle action / `node-version`.
   anti-copyright: l'utente aveva scaricato lì i videocorsi Lazzaro). Minor applicati:
   guard grafico vuoto, marcatore ↗ sui link esterni in home, `aria-pressed` sui filtri,
   scarto del mese parziale nei backtest.
+- **Previdenza complementare**: aggiunta scheda `contenuti/fonti/ciaoelsa.md` (tipo `sito`,
+  primo riassunto lungo del sito) su TFR, fondi pensione, deducibilità e tassazione
+  agevolata, con fonte CiaoElsa e link al calcolatore fondo pensione vs ETF; cifre fiscali
+  verificate sul web (deducibilità 5.300 € dal 2026, prestazione 15%→9%, rendimenti 20%).
+  Migliorata la voce del calcolatore in `dati/strumenti.yaml`.
 
 **Da fare:**
 - **L'utente**: crea il repo GitHub `investiamo-pagio`, `git push`, attiva Pages
