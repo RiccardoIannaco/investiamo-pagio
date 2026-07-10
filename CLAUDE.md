@@ -26,7 +26,15 @@ https://claude.ai/code/artifact/cf28bf25-076c-4157-a8d5-e1d4e7571faa
 4. `.superpowers/sdd/progress.md` — il ledger di avanzamento: i task lì marcati completi
    sono FATTI, non ri-eseguirli (fidati del ledger e di `git log`, non della memoria).
 
-## Stato (aggiornato 2026-07-06, sito completo e revisionato — PRONTO per il push)
+## Stato (aggiornato 2026-07-10, SITO PUBBLICATO E ONLINE)
+
+**Live:** https://riccardoiannaco.github.io/investiamo-pagio/ · repo pubblico:
+https://github.com/RiccardoIannaco/investiamo-pagio (main + 20 branch feature, Pages via Actions).
+Il workflow `deploy.yml` ripubblica a ogni push su `main`. Warning noto (non bloccante):
+le action GitHub segnalano la deprecazione di Node 20 → i runner lo forzano a Node 24;
+da rivedere quando conviene bumpare le versioni delle action / `node-version`.
+
+
 
 **Fatto:**
 - Analisi Notion, decisioni, mockup approvato, spec + piano committati.
