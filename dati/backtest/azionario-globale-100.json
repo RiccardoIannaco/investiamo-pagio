@@ -1,10 +1,10 @@
 {
  "portafoglio": "azionario-globale-100",
- "aggiornato": "2026-07-05",
+ "aggiornato": "2026-07-10",
  "valuta": "EUR",
  "finestra": [
   "2008-06",
-  "2026-07"
+  "2026-06"
  ],
  "serie": [
   [
@@ -874,15 +874,11 @@
   [
    "2026-06",
    63940.93
-  ],
-  [
-   "2026-07",
-   63521.43
   ]
  ],
  "metriche": {
-  "cagr": 0.1076,
-  "volatilita": 0.1362,
+  "cagr": 0.1086,
+  "volatilita": 0.1365,
   "max_drawdown": -0.3443,
   "peggior_anno": -0.1344
  }
