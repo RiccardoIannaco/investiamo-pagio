@@ -26,28 +26,30 @@ https://claude.ai/code/artifact/cf28bf25-076c-4157-a8d5-e1d4e7571faa
 4. `.superpowers/sdd/progress.md` — il ledger di avanzamento: i task lì marcati completi
    sono FATTI, non ri-eseguirli (fidati del ledger e di `git log`, non della memoria).
 
-## Stato (aggiornato 2026-07-05, TUTTI i 12 task implementati)
+## Stato (aggiornato 2026-07-06, sito completo e revisionato — PRONTO per il push)
 
 **Fatto:**
 - Analisi Notion, decisioni, mockup approvato, spec + piano committati.
 - **Sito completo**: 16 pagine buildano (`npm run build`), pytest 6/6, tutte le sezioni
   attive (home, inizia-qui, fonti con 29 schede, ETF con label/TER, dashboard con backtest
-  reali 2008-2026, strumenti, articoli, lavagna, cerca, come-contribuire, 404).
+  reali 2008-06 → 2026-06, strumenti, articoli, lavagna, cerca, come-contribuire, 404).
   Ledger dettagliato in `.superpowers/sdd/progress.md`.
-- Task 1 eseguito da subagente con review pulita; Task 2-12 eseguiti inline (limiti
-  subagenti) con build + verifica visiva screenshot per ogni task.
-- Catalogo ETF: 14/22 categorie verificate sul web (justETF, lug 2026).
+- Task 1 con review pulita; Task 2-12 eseguiti inline con build + verifica visiva per ognuno.
+- **Catalogo ETF: 20/22 categorie verificate sul web** (justETF, lug 2026), 125 voci con
+  TER/ticker/label; aggiunte crypto e managed-futures. Mancano solo i TER di lifestrategy
+  e Ossiam CAPE (ricerca interrotta dai limiti).
+- **Review finale whole-branch (Opus)**: verdetto "Sì con fix Important". Fix Important
+  applicato (`fonti_offline/` + `*.zip`/`*.pdf` in `.gitignore` — chiudeva una falla
+  anti-copyright: l'utente aveva scaricato lì i videocorsi Lazzaro). Minor applicati:
+  guard grafico vuoto, marcatore ↗ sui link esterni in home, `aria-pressed` sui filtri,
+  scarto del mese parziale nei backtest.
 
-**In corso / da fare:**
-- Workflow `etf-catalogo-ricerca` (run `wf_19264f2b-257`): ultime 8 categorie (america,
-  fattoriali, lifestrategy, obbligazionari-a-scadenza, crypto, managed-futures,
-  quantistici, compensazione-minusvalenze) → fondere i risultati in `dati/etf.yaml`
-  E in `docs/superpowers/plans/assets/etf.yaml` (stesso formato delle categorie fatte).
-- Review finale whole-branch con subagenti (i task 2-12 non hanno avuto review individuale:
-  recuperare con una review complessiva; finding minor noti nel ledger).
-- L'utente: crea il repo GitHub `investiamo-pagio`, push, attiva Pages (README §Pubblicazione).
+**Da fare:**
+- **L'utente**: crea il repo GitHub `investiamo-pagio`, `git push`, attiva Pages
+  (README §Pubblicazione). Tutto il resto è pronto e verde.
+- (facoltativo) completare i TER di lifestrategy e Ossiam CAPE quando i limiti si liberano.
 - Contenuti attesi dall'utente (promemoria in `IDEE.md`): lista video per i riassunti;
-  Excel e simulazioni dal Drive → `drive-locale/` (gitignored); screenshot per la guida.
+  i materiali del Drive sono già in `fonti_offline/` (gitignored); screenshot per la guida.
 
 ## Struttura della codebase
 
